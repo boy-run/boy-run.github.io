@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="风介穹宇">
 <meta property="og:description" content="小知识 %20 -&amp;gt; （空格）直接在浏览器中执行，要使用必须写%20%22 -&amp;gt; “%23 -&amp;gt; # 直接在浏览器中执行，要使用必须写%23%25 -&amp;gt; %%27 -&amp;gt; ‘注:  做注释使用#放在地址栏必须编码%23 做注释使用–放在地址栏必须加空格后再加字母(例如 – a), 或者使用–+">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-09T11:03:37.447Z">
+<meta property="og:updated_time" content="2019-01-23T07:27:23.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLi-Labs学习笔记1~6">
 <meta name="twitter:description" content="小知识 %20 -&amp;gt; （空格）直接在浏览器中执行，要使用必须写%20%22 -&amp;gt; “%23 -&amp;gt; # 直接在浏览器中执行，要使用必须写%23%25 -&amp;gt; %%27 -&amp;gt; ‘注:  做注释使用#放在地址栏必须编码%23 做注释使用–放在地址栏必须加空格后再加字母(例如 – a), 或者使用–+">
@@ -426,6 +426,7 @@
 <p>Lesson-5/6就是单双引号的差别。</p>
 <h5 id="MySQL常用查询"><a href="#MySQL常用查询" class="headerlink" title="MySQL常用查询"></a>MySQL常用查询</h5><blockquote>
 <p>基本查询<br>数据库版本：version()<br>当前数据库：database()<br>当前用户：user()<br>os版本：@@version_compile_os<br>数据库路径：@@basedir</p>
+<p>@@datadir：指定了 MySQL 的数据库文件存放路径。</p>
 <p>用冒号连接：concat_ws(char(32,58,32),user(),database(),version())</p>
 <p>文件读取：load_file(‘/etc/passwd’)</p>
 <p>查询所有数据库<br>(select group_concat(schema_name) from information_schema.schemata)<br>依据数据库查询表名<br>(select group_concat(table_name) from information_schema.tables where table_schema=’security’)<br>依据数据库、表名查询列名<br>(select group_concat(column_name) from information_schema.columns where table_schema=’security’ and table_name=’users’)<br>查询用户名密码<br>(select group_concat(username separator ‘;’) from users),(select group_concat(password separator ‘;’) from users)</p>
@@ -589,7 +590,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
