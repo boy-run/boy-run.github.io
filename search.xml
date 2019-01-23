@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[SQLMap个人笔记]]></title>
+    <url>%2F2019%2F01%2F23%2FSQLMap%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[1、注入类型 基于布尔的盲注，即可以根据返回页面判断条件真假的注入。 基于时间的盲注，即不能根据页面返回内容判断，用条件语句查看时间延迟语句是否执行判断。 基于报错注入，即页面会返回错误信息，或者把注入的语句的结果直接返回在页面中。 联合查询注入，可以使用union的情况下的注入。 堆查询注入，可以同时执行多条语句的执行时的注入。]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>安全</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[SQLi-Labs学习笔记21~25]]></title>
     <url>%2F2019%2F01%2F22%2FSQLi-Labs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B021-25%2F</url>
-    <content type="text"><![CDATA[小知识 single/double quotes 单/双引号；comment 这里指的是注释符号#和–；parenthesis 圆括号 HTTP数据包传输过程中Cookie字段的特殊符号会被urlencode； Lesson-21 cookie注入 – 基于错误 – 单引号&amp;圆括号与Lesson-20类似，把Cookie编码中的playload做Base64编码即可。 手注： // ‘) union select database(),user(),version() # 进行base64编码 JykgdW5pb24gc2VsZWN0IGRhdGFiYXNlKCksdXNlcigpLHZlcnNpb24oKSAj SQLMap：测不出有注入！！！ Lesson-22 cookie注入 – 基于错误 - 双引号与Lesson-20类似，这里基于双引号而已。 // admin1” and extractvalue(1,concat(0x7e,(select database()),0x7e)) # YWRtaW4xIiBhbmQgZXh0cmFjdHZhbHVlKDEsY29uY2F0KDB4N2UsKHNlbGVjdCBkYXRhYmFzZSgpKSwweDdlKSkgIw== Lesson-23 GET - 基于错误 – 过滤注释符1、id=-1，为什么要用-1，因为 sql 语句执行了两个 select 语句，第一个 select 为 id 的选择语句，第二个为我们构造的 select 语句。只有一个数据可以输出，为了让我们自己构造的数据可以正常输出，第一个 select 要没有结果，所以-1 或者超过数据库所有数据都可以。2、-1’ union select 1,@@datadir,3’ 第一个单引号闭合-1，第二个单引号闭合后面的。这样将查询内容显示在 username 处。3、此处可以报错注入、延时盲注、Boolean盲注。 http://127.0.0.1:8088/Less-23/?id=-1&#39; union select 1,@@datadir,3 ‘ Lesson-24 POST - 二次排序注入/存储型注入此例子中我们的步骤是注册一个 admin’#的账号，接下来登录该帐号后进行修改密码。此时修改的就是 admin 的密码。 Lesson-25 GET - 过滤and和or如何绕过or和and过滤。一般性提供以下几种思路： 大小写变形：Or,OR,oR 双写绕过：oorr ✅ 编码：hex，urlencode ❎ 添加注释：/**/ ❎ 利用符号：and=&amp;&amp; or=|| http://127.0.0.1:8088/Less-25/?id=1&#39; oorr extractvalue(1,concat(0x7e,database())) %23 http://127.0.0.1:8088/Less-25/?id=1&#39; || extractvalue(1,concat(0x7e,database())) %23 Lesson-25a GET - 过滤and和or关闭报错回显我们可以看到SQL执行语句为： 1$sql=&quot;SELECT * FROM users WHERE id=$id LIMIT 0,1&quot;; 这里的id传入的参数在SQL语句中并没有用单引号来包裹，同时在源代码中注释了print_r(mysql_error());所以无法使用报错注入，在这里我们沿用25关的绕过方式，对于注入方法我们可以使用延时注入或者联合查询、布尔注入等。 http://127.0.0.1:8088/Less-25a/?id=-1 union select 1,user(),3# //1=1 1=2 http://127.0.0.1:8088/Less-25a/?id=-1 || 1=1 –+]]></content>
+    <content type="text"><![CDATA[小知识 single/double quotes 单/双引号；comment 这里指的是注释符号#和–；parenthesis 圆括号 HTTP数据包传输过程中Cookie字段的特殊符号会被urlencode； Lesson-21 cookie注入 – 基于错误 – 单引号&amp;圆括号与Lesson-20类似，把Cookie编码中的playload做Base64编码即可。 手注： // ‘) union select database(),user(),version() # 进行base64编码 JykgdW5pb24gc2VsZWN0IGRhdGFiYXNlKCksdXNlcigpLHZlcnNpb24oKSAj SQLMap：测不出有注入！！！ Lesson-22 cookie注入 – 基于错误 - 双引号与Lesson-21类似，这里基于双引号而已。 // admin1” and extractvalue(1,concat(0x7e,(select database()),0x7e)) # YWRtaW4xIiBhbmQgZXh0cmFjdHZhbHVlKDEsY29uY2F0KDB4N2UsKHNlbGVjdCBkYXRhYmFzZSgpKSwweDdlKSkgIw== Lesson-23 GET - 基于错误 – 过滤注释符1、id=-1，为什么要用-1，因为 sql 语句执行了两个 select 语句，第一个 select 为 id 的选择语句，第二个为我们构造的 select 语句。只有一个数据可以输出，为了让我们自己构造的数据可以正常输出，第一个 select 要没有结果，所以-1 或者超过数据库所有数据都可以。2、-1’ union select 1,@@datadir,3’ 第一个单引号闭合-1，第二个单引号闭合后面的。这样将查询内容显示在 username 处。3、此处可以报错注入、延时盲注、Boolean盲注。 http://127.0.0.1:8088/Less-23/?id=-1&#39; union select 1,@@datadir,3 ‘ Lesson-24 POST - 二次排序注入/存储型注入此例子中我们的步骤是注册一个 admin’#的账号，接下来登录该帐号后进行修改密码。此时修改的就是 admin 的密码。 Lesson-25 GET - 过滤and和or如何绕过or和and过滤。一般性提供以下几种思路： 大小写变形：Or,OR,oR 双写绕过：oorr ✅ 编码：hex，urlencode ❎ 添加注释：/**/ ❎ 利用符号：and=&amp;&amp; or=|| http://127.0.0.1:8088/Less-25/?id=1&#39; oorr extractvalue(1,concat(0x7e,database())) %23 http://127.0.0.1:8088/Less-25/?id=1&#39; || extractvalue(1,concat(0x7e,database())) %23 Lesson-25a GET - 过滤and和or关闭报错回显我们可以看到SQL执行语句为： 1$sql=&quot;SELECT * FROM users WHERE id=$id LIMIT 0,1&quot;; 这里的id传入的参数在SQL语句中并没有用单引号来包裹，同时在源代码中注释了print_r(mysql_error());所以无法使用报错注入，在这里我们沿用25关的绕过方式，对于注入方法我们可以使用延时注入或者联合查询、布尔注入等。 http://127.0.0.1:8088/Less-25a/?id=-1 union select 1,user(),3# //1=1 1=2 http://127.0.0.1:8088/Less-25a/?id=-1 || 1=1 –+]]></content>
       <categories>
         <category>SQLi-Labs</category>
       </categories>
@@ -49,7 +60,7 @@
     <url>%2F2019%2F01%2F02%2FDocker%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[Docker可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的Linux机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口（类似iPhone的app）,更重要的是容器性能开销极低。 镜像篇 增加镜像： 到docker hub下载 或者 docker search xxx docker pull xxx 查询本地镜像：docker images 删除本地镜像：docker rmi xxx 容器篇 查看运行容器：docker ps 查看所有容器：docker ps -as 运行容器：docker start -i xxx 进入容器：docker exec -it 7f6dca80b660 /bin/bash 停止容器：docker stop xxx 停止所有容器：docker stop $(docker ps -q) 删除容器：docker rm -f xxx 删除所有容器：docker rm $(docker ps -aq)]]></content>
       <categories>
-        <category>Docker</category>
+        <category>Tools</category>
       </categories>
       <tags>
         <tag>开发</tag>
