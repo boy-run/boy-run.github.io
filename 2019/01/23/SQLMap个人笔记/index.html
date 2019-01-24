@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="小知识 基于布尔的盲注，即可以根据返回页面判断条件真假的注入。  基于时间的盲注，即不能根据页面返回内容判断，用条件语句查看时间延迟语句是否执行判断。  基于报错注入，即页面会返回错误信息，或者把注入的语句的结果直接返回在页面中。  联合查询注入，可以使用union的情况下的注入。  堆查询注入，可以同时执行多条语句的执行时的注入。   P.S. 主要为sqlmap -hh内容，仅为记录，不喜勿喷">
+<meta name="description" content="小知识  基于布尔的盲注，即可以根据返回页面判断条件真假的注入。  基于时间的盲注，即不能根据页面返回内容判断，用条件语句查看时间延迟语句是否执行判断。  基于报错注入，即页面会返回错误信息，或者把注入的语句的结果直接返回在页面中。  联合查询注入，可以使用union的情况下的注入。  堆查询注入，可以同时执行多条语句的执行时的注入。    P.S. 主要为sqlmap -hh内容，仅为记录，不喜">
 <meta name="keywords" content="安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQLMap个人笔记">
 <meta property="og:url" content="http://yoursite.com/2019/01/23/SQLMap个人笔记/index.html">
 <meta property="og:site_name" content="风介穹宇">
-<meta property="og:description" content="小知识 基于布尔的盲注，即可以根据返回页面判断条件真假的注入。  基于时间的盲注，即不能根据页面返回内容判断，用条件语句查看时间延迟语句是否执行判断。  基于报错注入，即页面会返回错误信息，或者把注入的语句的结果直接返回在页面中。  联合查询注入，可以使用union的情况下的注入。  堆查询注入，可以同时执行多条语句的执行时的注入。   P.S. 主要为sqlmap -hh内容，仅为记录，不喜勿喷">
+<meta property="og:description" content="小知识  基于布尔的盲注，即可以根据返回页面判断条件真假的注入。  基于时间的盲注，即不能根据页面返回内容判断，用条件语句查看时间延迟语句是否执行判断。  基于报错注入，即页面会返回错误信息，或者把注入的语句的结果直接返回在页面中。  联合查询注入，可以使用union的情况下的注入。  堆查询注入，可以同时执行多条语句的执行时的注入。    P.S. 主要为sqlmap -hh内容，仅为记录，不喜">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-24T02:26:34.676Z">
+<meta property="og:updated_time" content="2019-01-24T02:50:03.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLMap个人笔记">
-<meta name="twitter:description" content="小知识 基于布尔的盲注，即可以根据返回页面判断条件真假的注入。  基于时间的盲注，即不能根据页面返回内容判断，用条件语句查看时间延迟语句是否执行判断。  基于报错注入，即页面会返回错误信息，或者把注入的语句的结果直接返回在页面中。  联合查询注入，可以使用union的情况下的注入。  堆查询注入，可以同时执行多条语句的执行时的注入。   P.S. 主要为sqlmap -hh内容，仅为记录，不喜勿喷">
+<meta name="twitter:description" content="小知识  基于布尔的盲注，即可以根据返回页面判断条件真假的注入。  基于时间的盲注，即不能根据页面返回内容判断，用条件语句查看时间延迟语句是否执行判断。  基于报错注入，即页面会返回错误信息，或者把注入的语句的结果直接返回在页面中。  联合查询注入，可以使用union的情况下的注入。  堆查询注入，可以同时执行多条语句的执行时的注入。    P.S. 主要为sqlmap -hh内容，仅为记录，不喜">
 
 
 
@@ -389,13 +389,15 @@
       
 
       
-        <h5 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h5><ol>
+        <h5 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h5><blockquote>
+<ol>
 <li>基于布尔的盲注，即可以根据返回页面判断条件真假的注入。 </li>
 <li>基于时间的盲注，即不能根据页面返回内容判断，用条件语句查看时间延迟语句是否执行判断。 </li>
 <li>基于报错注入，即页面会返回错误信息，或者把注入的语句的结果直接返回在页面中。 </li>
 <li>联合查询注入，可以使用union的情况下的注入。 </li>
 <li>堆查询注入，可以同时执行多条语句的执行时的注入。 </li>
 </ol>
+</blockquote>
 <p>P.S. 主要为sqlmap -hh内容，仅为记录，不喜勿喷！🎁</p>
 <a id="more"></a>
 <h4 id="1、说明手册"><a href="#1、说明手册" class="headerlink" title="1、说明手册"></a>1、说明手册</h4><p>Usage: python sqlmap.py [options]</p>
@@ -580,7 +582,8 @@
 --test-filter=TE..  Select tests by payloads and/or titles (e.g. ROW)
 --test-skip=TEST..  Skip tests by payloads and/or titles (e.g. BENCHMARK)
 --update            Update sqlmap
-</code></pre><p>  <strong>Miscellaneous</strong>: 五花八门<br>    -z MNEMONICS        Use short mnemonics (e.g. “flu,bat,ban,tec=EU”)<br>    –alert=ALERT       Run host OS command(s) when SQL injection is found<br>    –answers=ANSWERS   Set predefined answers (e.g. “quit=N,follow=N”)<br>    –beep              Beep on question and/or when SQL injection is found<br>    –cleanup           Clean up the DBMS from sqlmap specific UDF and tables<br>    –dependencies      Check for missing (optional) sqlmap dependencies<br>    –disable-coloring  Disable console output coloring<br>    –gpage=GOOGLEPAGE  Use Google dork results from specified page number<br>    –identify-waf      Make a thorough testing for a WAF/IPS protection<br>    –list-tampers      Display list of available tamper scripts<br>    –mobile            Imitate smartphone through HTTP User-Agent header<br>    –offline           Work in offline mode (only use session data)<br>    –purge             Safely remove all content from sqlmap data directory<br>    –skip-waf          Skip heuristic detection of WAF/IPS protection<br>    –smart             Conduct thorough tests only if positive heuristic(s)<br>    –sqlmap-shell      Prompt for an interactive sqlmap shell<br>    –tmp-dir=TMPDIR    Local directory for storing temporary files<br>    –web-root=WEBROOT  Web server document root directory (e.g. “/var/www”)<br>    –wizard            Simple wizard interface for beginner users</p>
+</code></pre><p>  <strong>Miscellaneous</strong>: 五花八门</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">-z MNEMONICS        Use short mnemonics (e.g. &quot;flu,bat,ban,tec=EU&quot;)</span><br><span class="line">--alert=ALERT       Run host OS command(s) when SQL injection is found</span><br><span class="line">--answers=ANSWERS   Set predefined answers (e.g. &quot;quit=N,follow=N&quot;)</span><br><span class="line">--beep              Beep on question and/or when SQL injection is found</span><br><span class="line">--cleanup           Clean up the DBMS from sqlmap specific UDF and tables</span><br><span class="line">--dependencies      Check for missing (optional) sqlmap dependencies</span><br><span class="line">--disable-coloring  Disable console output coloring</span><br><span class="line">--gpage=GOOGLEPAGE  Use Google dork results from specified page number</span><br><span class="line">--identify-waf      Make a thorough testing for a WAF/IPS protection</span><br><span class="line">--list-tampers      Display list of available tamper scripts</span><br><span class="line">--mobile            Imitate smartphone through HTTP User-Agent header</span><br><span class="line">--offline           Work in offline mode (only use session data)</span><br><span class="line">--purge             Safely remove all content from sqlmap data directory</span><br><span class="line">--skip-waf          Skip heuristic detection of WAF/IPS protection</span><br><span class="line">--smart             Conduct thorough tests only if positive heuristic(s)</span><br><span class="line">--sqlmap-shell      Prompt for an interactive sqlmap shell</span><br><span class="line">--tmp-dir=TMPDIR    Local directory for storing temporary files</span><br><span class="line">--web-root=WEBROOT  Web server document root directory (e.g. &quot;/var/www&quot;)</span><br><span class="line">--wizard            Simple wizard interface for beginner users</span><br></pre></td></tr></table></figure>
 
       
     </div>
