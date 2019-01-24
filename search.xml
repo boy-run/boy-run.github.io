@@ -58,7 +58,7 @@
   <entry>
     <title><![CDATA[Docker个人笔记]]></title>
     <url>%2F2019%2F01%2F02%2FDocker%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[Docker可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的Linux机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口（类似iPhone的app）,更重要的是容器性能开销极低。 镜像篇 增加镜像： 到docker hub下载 或者 docker search xxx docker pull xxx 查询本地镜像：docker images 删除本地镜像：docker rmi xxx 容器篇 查看运行容器：docker ps 查看所有容器：docker ps -as 运行容器：docker start -i xxx 进入容器：docker exec -it 7f6dca80b660 /bin/bash 停止容器：docker stop xxx 停止所有容器：docker stop $(docker ps -q) 删除容器：docker rm -f xxx 删除所有容器：docker rm $(docker ps -aq)]]></content>
+    <content type="text"><![CDATA[Docker可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的Linux机器上，也可以实现虚拟化。容器是完全使用沙箱机制，相互之间不会有任何接口（类似iPhone的app）,更重要的是容器性能开销极低。 镜像篇 增加镜像：到docker hub下载 || docker search 查询本地镜像：docker images 删除本地镜像：docker rmi xxx 容器篇 查看运行容器：docker ps 查看所有容器：docker ps -as 运行容器：docker start -i xxx 进入容器：docker exec -it 7f6dca80b660 /bin/bash 停止容器：docker stop xxx 停止所有容器：docker stop $(docker ps -q) 删除容器：docker rm -f xxx 删除所有容器：docker rm $(docker ps -aq)]]></content>
       <categories>
         <category>Tools</category>
       </categories>
