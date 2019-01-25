@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[BugkuCTF-WEB-WriteUp]]></title>
     <url>%2F2019%2F01%2F25%2FBugkuCTF-WEB-WriteUp%2F</url>
-    <content type="text"><![CDATA[web2看到满屏的滑稽哥，感觉JS真要统治世界了~ 🐶 这个是简单模式，flag在网页源代码中有，吐槽下flag格式：KEY{Web-2-bugKssNNikls9100} to be continue …]]></content>
+    <content type="text"><![CDATA[web2看到满屏的滑稽哥，感觉JS真要统治世界了~ 🐶 这个是简单模式，flag在网页源代码中有，吐槽下flag格式：KEY{Web-2-bugKssNNikls9100} web基础$_GET直接把PHP源代码贴出来了，善变的flag格式：flag{bugku_get_su8kej2en} to be continue …]]></content>
       <categories>
         <category>CTF</category>
       </categories>
