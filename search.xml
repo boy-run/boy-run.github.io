@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[浅析PHP伪协议]]></title>
     <url>%2F2019%2F02%2F01%2F%E6%B5%85%E6%9E%90PHP%E4%BC%AA%E5%8D%8F%E8%AE%AE%2F</url>
-    <content type="text"><![CDATA[小知识 PHP官方文档 file:// — 访问本地文件系统http:// — 访问 HTTP(s) 网址ftp:// — 访问 FTP(s) URLsphp:// — 访问各个输入/输出流（I/O streams）zlib:// — 压缩流data:// — 数据（RFC 2397）glob:// — 查找匹配的文件路径模式phar:// — PHP 归档ssh2:// — Secure Shell 2rar:// — RARogg:// — 音频流expect:// — 处理交互式的流 php://input 访问请求的原始数据的只读流]]></content>
+    <content type="text"><![CDATA[小知识 file:// — 访问本地文件系统http:// — 访问 HTTP(s) 网址ftp:// — 访问 FTP(s) URLsphp:// — 访问各个输入/输出流（I/O streams）zlib:// — 压缩流data:// — 数据（RFC 2397）glob:// — 查找匹配的文件路径模式phar:// — PHP 归档ssh2:// — Secure Shell 2rar:// — RARogg:// — 音频流expect:// — 处理交互式的流 php://input 访问请求的原始数据的只读流to be continue …]]></content>
       <categories>
         <category>CTF</category>
       </categories>
