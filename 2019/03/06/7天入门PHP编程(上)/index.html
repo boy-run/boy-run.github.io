@@ -22,7 +22,7 @@
     <meta name="description" content="遇见更好的自己。">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>7天入门PHP · 风介穹宇</title>
+    <title>7天入门PHP编程(上) · 风介穹宇</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">风介穹宇</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">7天入门PHP</a>
+                <a href="#" class="post-name">7天入门PHP编程(上)</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            7天入门PHP
+            7天入门PHP编程(上)
             <!-- 404 -->
             
         </h1>
@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">1k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">2.5k</span>阅读时长: <span class="post-count reading-time">10 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -407,7 +407,7 @@ height:50vh;
 <a id="more"></a>
 <h3 id="第1行代码"><a href="#第1行代码" class="headerlink" title="第1行代码"></a>第1行代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">phpinfo();</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="变量命名规则"><a href="#变量命名规则" class="headerlink" title="变量命名规则"></a>变量命名规则</h3><ol>
-<li>必须要以$开始。如变量x必须要写成$x</li>
+<li>必须要以$开始。如变量x必须要写成​$x</li>
 <li>变量的首字母不能以数字开始。</li>
 <li>变量的名字区分大小写。</li>
 <li>变量不要用特殊符号、中文。（_不算特殊符号）</li>
@@ -484,7 +484,97 @@ height:50vh;
 <h4 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do while循环"></a>do while循环</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">$i = 0;</span><br><span class="line">do &#123;</span><br><span class="line">   echo $i;</span><br><span class="line">&#125; while ($i &gt; 0);</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 <h4 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">for ($i = 1; $i &lt;= 10; $i++) &#123;</span><br><span class="line">    echo &apos;分手后第&apos;.$i.&apos;年，我全都忘了你的样子&lt;br /&gt;&apos;;</span><br><span class="line">&#125;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
 <h4 id="goto语法"><a href="#goto语法" class="headerlink" title="goto语法"></a>goto语法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">for($i=0; $i&lt;100; $i++) &#123;</span><br><span class="line">    echo &apos;第&apos;. $i .&apos;周往返北京大连&lt;br /&gt;&apos;;</span><br><span class="line">    if($i == 17)&#123;</span><br><span class="line">            goto end; </span><br><span class="line">     &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">end:</span><br><span class="line">echo &apos;集团公司要求停止此项&apos;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="自定义函数"><a href="#自定义函数" class="headerlink" title="自定义函数"></a>自定义函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">//定义变量$hello的值为10</span><br><span class="line">$hello = 10;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//函数后的参数（形式上的参数，参数）处写上变量名为$hello</span><br><span class="line">function demo( $hello )&#123;</span><br><span class="line">	</span><br><span class="line">	//形参带入了函数体内，函数体内变量$hello 改为了 250</span><br><span class="line">	$hello = 250;</span><br><span class="line">	</span><br><span class="line">	//输入2个250相加的结果</span><br><span class="line">	echo $hello + $hello;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//将函数体外的变量$hello，传入变量的参数处（实际传入的参数，实参），显示出的结果为500</span><br><span class="line">demo($hello);</span><br><span class="line"></span><br><span class="line">//此处$hello的值输出，依然为10</span><br><span class="line">echo $hello;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="自定义函数高级调用"><a href="#自定义函数高级调用" class="headerlink" title="自定义函数高级调用"></a>自定义函数高级调用</h3><h4 id="回调函数"><a href="#回调函数" class="headerlink" title="回调函数"></a>回调函数</h4><p>回调函数，就是在处理一个功能的时候，我让让这个功能自定义能力再强一些，我准许调用这个函数的时候，还可以传入一个函数配合、协助进行处理。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function woziji($one,$two,$func)&#123;</span><br><span class="line">		//我规定：检查$func是否是函数，如果不是函数停止执行本段代码，返回false</span><br><span class="line">		if(!is_callable($func))&#123;</span><br><span class="line">				return false;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		//我把$one、$two相加，再把$one和$two传入$func这个函数中处理一次</span><br><span class="line">		//$func是一个变量函数，参见变量函数这一章</span><br><span class="line">		echo $one + $two + $func($one,$two);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//我们定义几个函数试试</span><br><span class="line">function plusx2( $foo , $bar)&#123;</span><br><span class="line">	</span><br><span class="line">		$result = ($foo+$bar)*2;</span><br><span class="line">		</span><br><span class="line">		return $result;</span><br><span class="line">		</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function jian( $x , $y )&#123;</span><br><span class="line">	$result = $x - $y;</span><br><span class="line">	</span><br><span class="line">	return $result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//调用一下函数，woziji，向里面传入参数试试</span><br><span class="line"></span><br><span class="line">echo woziji(20,10,&apos;plusx2&apos;);</span><br><span class="line"></span><br><span class="line">//将plusx2改成jian试试结果</span><br><span class="line">echo woziji(20,10,&apos;jian&apos;);</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="内部函数"><a href="#内部函数" class="headerlink" title="内部函数"></a>内部函数</h4><p>内部函数，是指在函数内部又声明了一个函数。</p>
+<p>注意事项：</p>
+<ol>
+<li>内部函数名，不能是已存在的函数名</li>
+<li>假设在函数a里面定义了一个内部函数，不能定用两次函数a。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">function foo()</span><br><span class="line">&#123;</span><br><span class="line">    echo &apos;我是函数foo哟，调一下我才会执行定义函数bar的过程&lt;br /&gt;&apos;;</span><br><span class="line">  function bar()</span><br><span class="line">  &#123;</span><br><span class="line">       echo &apos;在foo函数内部有个函数叫bar函数&lt;br /&gt;&apos;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//现在还不能调用bar()函数，因为它还不存在</span><br><span class="line">bar();</span><br><span class="line"></span><br><span class="line">foo();</span><br><span class="line"></span><br><span class="line">//现在可以调用bar()函数了，因为foo()函数的执行使得bar()函数变为已定义的函数</span><br><span class="line"></span><br><span class="line">bar();</span><br><span class="line"></span><br><span class="line">//再调一次foo()看看是不是会报错？</span><br><span class="line">foo();</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h4><p>我们实际的处理情况中会遇到这样的一个情况：</p>
+<ol>
+<li>我想在函数体内定义的变量在函数体外用</li>
+<li>我想把函数体外的变量拿到函数体内来使用</li>
+</ol>
+<h5 id="1-通过-GLOBLAS来读取外部变量"><a href="#1-通过-GLOBLAS来读取外部变量" class="headerlink" title="1.通过$GLOBLAS来读取外部变量"></a>1.通过$GLOBLAS来读取外部变量</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">$one = 10;</span><br><span class="line"></span><br><span class="line">function demo()&#123;</span><br><span class="line">    $two = 100;</span><br><span class="line"></span><br><span class="line">    $result = $two + $GLOBALS[&apos;one&apos;];</span><br><span class="line"></span><br><span class="line">    return $result;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">//你会发现结果变成了110</span><br><span class="line">echo demo();</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="2-通过-GLOBLAS，在函数内修改外部变量"><a href="#2-通过-GLOBLAS，在函数内修改外部变量" class="headerlink" title="2.通过$GLOBLAS，在函数内修改外部变量"></a>2.通过$GLOBLAS，在函数内修改外部变量</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">$hongniu = &apos;我是一个兵，来自老百姓&apos;;</span><br><span class="line"></span><br><span class="line">function test()&#123;</span><br><span class="line"></span><br><span class="line">    echo &apos;执行了函数test哟&lt;br /&gt;&apos;;</span><br><span class="line">    //调用test()函数，将通过$GLOBALS[&apos;hongniu&apos;],把$hongniu的值改变掉</span><br><span class="line"></span><br><span class="line">    $GLOBALS[&apos;hongniu&apos;] = &apos;帮助别人很快乐&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test();</span><br><span class="line">//发现是不是输出的值变了呀？</span><br><span class="line">echo $hongniu;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="3-通过-GLOBLAS，在函数内创建全局变量"><a href="#3-通过-GLOBLAS，在函数内创建全局变量" class="headerlink" title="3.通过$GLOBLAS，在函数内创建全局变量"></a>3.通过$GLOBLAS，在函数内创建全局变量</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">function hello()&#123;</span><br><span class="line"></span><br><span class="line">    $GLOBALS[&apos;que&apos;] = &apos;提神喝茶更好哟&apos;;</span><br><span class="line"></span><br><span class="line">    echo &apos;你调了一下函数hello&lt;br /&gt;&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">hello();</span><br><span class="line"></span><br><span class="line">echo $que;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="内置函数"><a href="#内置函数" class="headerlink" title="内置函数"></a>内置函数</h3><ul>
+<li>略</li>
+</ul>
+<h3 id="文件包含函数"><a href="#文件包含函数" class="headerlink" title="文件包含函数"></a>文件包含函数</h3><p>在实际开发中，常常需要把程序中的公用代码放到一个文件中，使用这些代码的文件只需要包含这个文件即可。这种方法有助于提高代码的重用性，给代码的编写与维护带来很大的便利。在PHP中， 有require、require_once、include、include- once四种方法包含一个文件。</p>
+<p>我们来对比他们的不同：</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>包含失败</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inlcude</td>
+<td>返回一条警告</td>
+<td>文件继续向下执行。通常用于动态包含</td>
+</tr>
+<tr>
+<td>Require</td>
+<td>一个致命的错</td>
+<td>代码就不会继续向下执行。通常包含极为重要的文件，整个代码甭想执行</td>
+</tr>
+<tr>
+<td>Include_once</td>
+<td>返回一条警告</td>
+<td>除了原有include的功能以外，它还会做once检测，如果文件曾经已经被被包含过，不再包含</td>
+</tr>
+<tr>
+<td>Require_once</td>
+<td>一个致命的错</td>
+<td>除了原的功能一外，会做一次once检测，防止文件反复被包含</td>
+</tr>
+</tbody>
+</table>
+<h3 id="数字常用函数"><a href="#数字常用函数" class="headerlink" title="数字常用函数"></a>数字常用函数</h3><ul>
+<li>略</li>
+</ul>
+<h3 id="日期常用函数"><a href="#日期常用函数" class="headerlink" title="日期常用函数"></a>日期常用函数</h3><ul>
+<li>略</li>
+</ul>
+<h3 id="字符串常用函数"><a href="#字符串常用函数" class="headerlink" title="字符串常用函数"></a>字符串常用函数</h3><ul>
+<li>略</li>
+</ul>
+<h2 id="数组与数据结构"><a href="#数组与数据结构" class="headerlink" title="数组与数据结构"></a>数组与数据结构</h2><p>数组在之前我们让大家记住两个观点：</p>
+<ol>
+<li>数组可以存入多个不同类型的数据，是一个复合数据类型。</li>
+<li>数组的英文是array，学一下最简单的数组声明。</li>
+</ol>
+<p>代码片段①</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">$shu = array(1 , 1.5 , true ,&apos;天王盖地虎，小鸡炖蘑菇&apos;);</span><br><span class="line"></span><br><span class="line">echo &apos;&lt;pre&gt;&apos;;</span><br><span class="line">var_dump($shu);</span><br><span class="line">echo &apos;&lt;/pre&gt;&apos;;</span><br><span class="line"></span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1g0t4hnxj8zj30t20diwg4.jpg" alt=""></p>
+<p>代码片段②</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">$kele = array(</span><br><span class="line">            &apos;只有不断努力才能博得未来&apos;,</span><br><span class="line">            10 =&gt; &apos;NoAlike&apos;,</span><br><span class="line">            &apos;PHP学院&apos; ,</span><br><span class="line">            &apos;去PHP学院去PHP&apos;,</span><br><span class="line">            19 =&gt; &apos;凤姐和芙蓉我都爱&apos; ,</span><br><span class="line">            &apos;杨幂臭脚我最爱&apos;</span><br><span class="line">        );</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//打印显示$kele</span><br><span class="line">echo &apos;&lt;pre&gt;&apos;;</span><br><span class="line">var_dump($kele);</span><br><span class="line">echo &apos;&lt;/pre&gt;&apos;;</span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1g0t4jcqoabj30b505ydge.jpg" alt=""></p>
+<h2 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h2><p>在学习正则表达示前，我们先要来学习正则表达示的定界符。</p>
+<p>####定界符，就是定一个边界，边界已内的就是正则表达示。</p>
+<p>PHP的正则表达示定界符的规定如下：</p>
+<blockquote>
+<p>定界符，不能用a-zA-Z0-9\ 其他的都可以用。必须成对出现，有开始就有结束。</p>
+</blockquote>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1g0t4o267vsj31gk0fsjsw.jpg" alt=""></p>
+<h3 id="原子"><a href="#原子" class="headerlink" title="原子"></a>原子</h3><p>原子是正则表达示里面的最小单位，原子说白了就是需要匹配的内容。</p>
+<p>特殊的原子：</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1g0t4rx524lj30gg0fs78c.jpg" alt=""></p>
+<h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><p>抛出问题：    \d 代表匹配一个字符。而我现在想要匹配十个八个，任意多个数字肿么办？</p>
+<p>这个时候我们就要用到元字符。在使用原子的时候，发现只能够匹配一个字符，可是要匹配多个字符就出现了问题。<br>这个时候，我们需要借助元字符来帮我们修饰原子，实现更多的功能。</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1g0t4trihzij31ge0swwj8.jpg" alt=""></p>
+<h3 id="模式修正符"><a href="#模式修正符" class="headerlink" title="模式修正符"></a>模式修正符</h3><ul>
+<li>略</li>
+</ul>
+
     </article>
     <!-- license  -->
     
@@ -492,7 +582,7 @@ height:50vh;
             <p>原文作者：<a href="https://boy-run.github.io">风介zZ</a>
             </p><p>原文链接：<a href="https://boy-run.github.io/2019/03/06/7天入门PHP编程(上)/">https://boy-run.github.io/2019/03/06/7天入门PHP编程(上)/</a>
             </p><p>发表日期：<a href="https://boy-run.github.io/2019/03/06/7天入门PHP编程(上)/">March 6th 2019, 3:01:37 pm</a>
-            </p><p>更新日期：<a href="https://boy-run.github.io/2019/03/06/7天入门PHP编程(上)/">March 6th 2019, 3:15:50 pm</a>
+            </p><p>更新日期：<a href="https://boy-run.github.io/2019/03/06/7天入门PHP编程(上)/">March 6th 2019, 4:05:03 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -631,7 +721,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#小知识"><span class="toc-number">1.</span> <span class="toc-text">小知识</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第1行代码"><span class="toc-number"></span> <span class="toc-text">第1行代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量命名规则"><span class="toc-number"></span> <span class="toc-text">变量命名规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常量和变量"><span class="toc-number"></span> <span class="toc-text">常量和变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#可变变量"><span class="toc-number">1.</span> <span class="toc-text">可变变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#外部变量"><span class="toc-number">2.</span> <span class="toc-text">外部变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#外部变量-1"><span class="toc-number">3.</span> <span class="toc-text">外部变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#变量引用"><span class="toc-number">4.</span> <span class="toc-text">变量引用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注释"><span class="toc-number"></span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据类型"><span class="toc-number"></span> <span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Boolean-布尔类型"><span class="toc-number">1.</span> <span class="toc-text">Boolean 布尔类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Integer-整型"><span class="toc-number">2.</span> <span class="toc-text">Integer 整型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Float-浮点型"><span class="toc-number">3.</span> <span class="toc-text">Float 浮点型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#String-字符串"><span class="toc-number">4.</span> <span class="toc-text">String 字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Array-数组"><span class="toc-number">5.</span> <span class="toc-text">Array 数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Object-对象"><span class="toc-number">6.</span> <span class="toc-text">Object 对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Resource-资源类型"><span class="toc-number">7.</span> <span class="toc-text">Resource 资源类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NULL"><span class="toc-number">8.</span> <span class="toc-text">NULL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Callback-Callable-类型"><span class="toc-number">9.</span> <span class="toc-text">Callback / Callable 类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表达式与运算符"><span class="toc-number"></span> <span class="toc-text">表达式与运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流程控制"><span class="toc-number"></span> <span class="toc-text">流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if"><span class="toc-number"></span> <span class="toc-text">if</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#switch"><span class="toc-number"></span> <span class="toc-text">switch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环"><span class="toc-number"></span> <span class="toc-text">循环</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#while循环"><span class="toc-number">1.</span> <span class="toc-text">while循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#do-while循环"><span class="toc-number">2.</span> <span class="toc-text">do while循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#for循环"><span class="toc-number">3.</span> <span class="toc-text">for循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#goto语法"><span class="toc-number">4.</span> <span class="toc-text">goto语法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数"><span class="toc-number"></span> <span class="toc-text">函数</span></a>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#小知识"><span class="toc-number">1.</span> <span class="toc-text">小知识</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#第1行代码"><span class="toc-number"></span> <span class="toc-text">第1行代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量命名规则"><span class="toc-number"></span> <span class="toc-text">变量命名规则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常量和变量"><span class="toc-number"></span> <span class="toc-text">常量和变量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#可变变量"><span class="toc-number">1.</span> <span class="toc-text">可变变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#外部变量"><span class="toc-number">2.</span> <span class="toc-text">外部变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#外部变量-1"><span class="toc-number">3.</span> <span class="toc-text">外部变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#变量引用"><span class="toc-number">4.</span> <span class="toc-text">变量引用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注释"><span class="toc-number"></span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据类型"><span class="toc-number"></span> <span class="toc-text">数据类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Boolean-布尔类型"><span class="toc-number">1.</span> <span class="toc-text">Boolean 布尔类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Integer-整型"><span class="toc-number">2.</span> <span class="toc-text">Integer 整型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Float-浮点型"><span class="toc-number">3.</span> <span class="toc-text">Float 浮点型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#String-字符串"><span class="toc-number">4.</span> <span class="toc-text">String 字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Array-数组"><span class="toc-number">5.</span> <span class="toc-text">Array 数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Object-对象"><span class="toc-number">6.</span> <span class="toc-text">Object 对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Resource-资源类型"><span class="toc-number">7.</span> <span class="toc-text">Resource 资源类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NULL"><span class="toc-number">8.</span> <span class="toc-text">NULL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Callback-Callable-类型"><span class="toc-number">9.</span> <span class="toc-text">Callback / Callable 类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#表达式与运算符"><span class="toc-number"></span> <span class="toc-text">表达式与运算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#流程控制"><span class="toc-number"></span> <span class="toc-text">流程控制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#if"><span class="toc-number"></span> <span class="toc-text">if</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#switch"><span class="toc-number"></span> <span class="toc-text">switch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环"><span class="toc-number"></span> <span class="toc-text">循环</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#while循环"><span class="toc-number">1.</span> <span class="toc-text">while循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#do-while循环"><span class="toc-number">2.</span> <span class="toc-text">do while循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#for循环"><span class="toc-number">3.</span> <span class="toc-text">for循环</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#goto语法"><span class="toc-number">4.</span> <span class="toc-text">goto语法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#函数"><span class="toc-number"></span> <span class="toc-text">函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义函数"><span class="toc-number"></span> <span class="toc-text">自定义函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义函数高级调用"><span class="toc-number"></span> <span class="toc-text">自定义函数高级调用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#回调函数"><span class="toc-number">1.</span> <span class="toc-text">回调函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#内部函数"><span class="toc-number">2.</span> <span class="toc-text">内部函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#变量作用域"><span class="toc-number">3.</span> <span class="toc-text">变量作用域</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-通过-GLOBLAS来读取外部变量"><span class="toc-number">3.1.</span> <span class="toc-text">1.通过$GLOBLAS来读取外部变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-通过-GLOBLAS，在函数内修改外部变量"><span class="toc-number">3.2.</span> <span class="toc-text">2.通过$GLOBLAS，在函数内修改外部变量</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-通过-GLOBLAS，在函数内创建全局变量"><span class="toc-number">3.3.</span> <span class="toc-text">3.通过$GLOBLAS，在函数内创建全局变量</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内置函数"><span class="toc-number"></span> <span class="toc-text">内置函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件包含函数"><span class="toc-number"></span> <span class="toc-text">文件包含函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数字常用函数"><span class="toc-number"></span> <span class="toc-text">数字常用函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#日期常用函数"><span class="toc-number"></span> <span class="toc-text">日期常用函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#字符串常用函数"><span class="toc-number"></span> <span class="toc-text">字符串常用函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组与数据结构"><span class="toc-number"></span> <span class="toc-text">数组与数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#正则表达式"><span class="toc-number"></span> <span class="toc-text">正则表达式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#原子"><span class="toc-number"></span> <span class="toc-text">原子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#元字符"><span class="toc-number"></span> <span class="toc-text">元字符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模式修正符"><span class="toc-number"></span> <span class="toc-text">模式修正符</span></a>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -644,6 +734,18 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -780,7 +882,7 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/7天入门PHP编程(上)/">7天入门PHP</a>
+            <span class="archive-post-date">03/06</span><a class="archive-post-title" href="/2019/03/06/7天入门PHP编程(上)/">7天入门PHP编程(上)</a>
         </li>
     
     
@@ -842,13 +944,13 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
-    
         <span class="sidebar-tag-name" data-tags="开发"><span class="iconfont-archer">&#xe606;</span>开发</span>
     
         <span class="sidebar-tag-name" data-tags="安全"><span class="iconfont-archer">&#xe606;</span>安全</span>
     
         <span class="sidebar-tag-name" data-tags="随の想"><span class="iconfont-archer">&#xe606;</span>随の想</span>
+    
+        <span class="sidebar-tag-name" data-tags="PHP"><span class="iconfont-archer">&#xe606;</span>PHP</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -883,8 +985,6 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="编程"><span class="iconfont-archer">&#xe60a;</span>编程</span>
-    
         <span class="sidebar-category-name" data-categories="Tools"><span class="iconfont-archer">&#xe60a;</span>Tools</span>
     
         <span class="sidebar-category-name" data-categories="CTF"><span class="iconfont-archer">&#xe60a;</span>CTF</span>
@@ -892,6 +992,8 @@ jsonContent:
         <span class="sidebar-category-name" data-categories="SQLi-Labs"><span class="iconfont-archer">&#xe60a;</span>SQLi-Labs</span>
     
         <span class="sidebar-category-name" data-categories="随笔"><span class="iconfont-archer">&#xe60a;</span>随笔</span>
+    
+        <span class="sidebar-category-name" data-categories="编程"><span class="iconfont-archer">&#xe60a;</span>编程</span>
     
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
