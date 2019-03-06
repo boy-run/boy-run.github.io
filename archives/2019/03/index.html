@@ -22,7 +22,7 @@
     <meta name="description" content="遇见更好的自己。">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>浅析Supervisor · 风介穹宇</title>
+    <title>风介穹宇</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,23 +203,12 @@
 </head>
 
     
-        <body class="post-body">
-    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
-    
-    <div class="banner">
-            <div class="blog-title">
-                <a href="/">风介穹宇</a>
-            </div>
-            <div class="post-title">
-                <a href="#" class="post-name">浅析Supervisor</a>
-            </div>
-    </div>
     
     <a class="home-link" href="/">风介穹宇</a>
 </header>
@@ -231,74 +220,24 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(https://source.unsplash.com/random)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
-            
-            浅析Supervisor
-            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
-            
-            <!-- 404 -->
-            
         </p>
         <!-- 文章页meta -->
-        
-            <div class="post-intros">
-                <!-- 文章页标签  -->
-                
-                    <div class="post-intro-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="开发">开发</a>
-    
-</div>
-                
-                
-                    <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">371</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
-                    </div>
-                
-                <div class="post-intro-meta">
-                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/02/25</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
-                    
-                    <span class="shareWrapper">
-                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
-                        <span class="shareText">Share</span>
-                        <ul class="shareList">
-                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
-                                <div class="share-qrcode"></div>
-                            </li>
-                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
-                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
-                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
-                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         
     </div>
 </div>
@@ -399,72 +338,49 @@ height:50vh;
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main post-page">
-    <article class="article-entry">
-        <h4 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h4><blockquote>
-<p><a href="http://supervisord.org/" target="_blank" rel="noopener">Supervisor</a>是用Python开发的一个client/server服务，是Linux/Unix系统下的一个进程管理工具，不支持Windows系统。它可以很方便的监听、启动、停止、重启一个或多个进程。用Supervisor管理的进程，当一个进程意外被杀死，supervisort监听到进程死后，会自动将它重新拉起，很方便的做到进程自动恢复的功能，不再需要自己写shell脚本来控制。</p>
-</blockquote>
-<a id="more"></a>
-<h4 id="组成部分"><a href="#组成部分" class="headerlink" title="组成部分"></a>组成部分</h4><p>Supervisor 主要由两部分组成：</p>
-<ol>
-<li>supervisord(server 部分)：主要负责管理子进程，响应客户端命令以及日志的输出等；</li>
-<li>supervisorctl(client 部分)：命令行客户端，用户可以通过它与不同的 supervisord 进程联系，获取子进程的状态等。</li>
-</ol>
-<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>安装完成之后，可以运行 echo_supervisord_conf 生成在<strong>当前目录</strong>默认的配置文件：</p>
-<p><code>echo_supervisord_conf &gt; supervisord.conf</code></p>
-<p><strong>运行的时候也应使用-c参数主动指定配置文件</strong></p>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1g0iqmubwxgj31g40mstcb.jpg" alt=""></p>
-<h4 id="配置文件说明"><a href="#配置文件说明" class="headerlink" title="配置文件说明"></a>配置文件说明</h4><p>生成的主配置文件可以开启 <strong>web 管理</strong>等功能，习惯上不去动主配置文件，通过[include]导入子配置文件。</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1g0iqtw9y0aj30to06mjsg.jpg" alt=""></p>
-<p>以下是一个简单的子配置文件</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1g0iqwj6rlzj317q09otag.jpg" alt=""></p>
-<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">supervisorctl -c 主配置文件</span><br><span class="line">status ＃查看脚本状态</span><br><span class="line">reread ＃读取有更新（增加）的配置文件，不会启动新添加的程序</span><br><span class="line">update ＃重启配置文件修改过的程序</span><br><span class="line">stop xxx</span><br><span class="line">start xxx</span><br><span class="line">restart xxx</span><br></pre></td></tr></table></figure>
-<h4 id="参考文档："><a href="#参考文档：" class="headerlink" title="参考文档："></a>参考文档：</h4><p><a href="https://blog.csdn.net/xiaoyida11/article/details/59512294" target="_blank" rel="noopener">Supervisor 使用简介</a></p>
-
-    </article>
-    <!-- license  -->
+            <main class="main index-page">
     
-        <div class="license-wrapper">
-            <p>原文作者：<a href="https://boy-run.github.io">风介zZ</a>
-            </p><p>原文链接：<a href="https://boy-run.github.io/2019/02/25/浅析Supervisor/">https://boy-run.github.io/2019/02/25/浅析Supervisor/</a>
-            </p><p>发表日期：<a href="https://boy-run.github.io/2019/02/25/浅析Supervisor/">February 25th 2019, 4:00:13 pm</a>
-            </p><p>更新日期：<a href="https://boy-run.github.io/2019/02/25/浅析Supervisor/">February 25th 2019, 4:33:51 pm</a>
-            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+    
+    
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href="/2019/03/06/7天入门PHP编程(上)/">
+            
+                <span>7天入门PHP</span>
+        </a>
+        <div class="abstract-content">
+            PHP个人学习笔记7天学会PHP第1行代码12345&lt;?phpphpinfo();?&gt;
+变量命名规则
+必须要以$开始。如变量x必须要写成$x
+变量的首字母不能以数字开始。
+变量的名字区分大小写。
+变量不要用特殊符号、中文。（_不算特殊符号）
+变量命名要有意义（别写xxx，aaa，ccc这种 变量名）
+
+常量和变量define(常量名，常量值)
+常量名可以小写，但是通常大写
+常量名建议只用字母和下划线1234&lt;?phpdefine(&apos;MY_NAME&apos;,&apos;PHP学院&apos;);echo &apos;我的名字是&apos; . MY_NAME...
         </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/06</span>
+            </div>
+            <!-- tags  -->
+            
+            <div class="abstract-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="PHP">PHP</a>
+    
+</div>
+            
+        </div>
+    </article>
     
     <!-- paginator  -->
-    <ul class="post-paginator">
-        <li class="next">
-            
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/03/06/7天入门PHP编程(上)/" title="7天入门PHP">
-                    <div class="nextTitle">7天入门PHP</div>
-                </a>
-            
-        </li>
-        <li class="previous">
-            
-                <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/01/25/BugkuCTF-WEB-WriteUp/" title="BugkuCTF-WEB-WriteUp">
-                    <div class="prevTitle">BugkuCTF-WEB-WriteUp</div>
-                </a>
-            
-        </li>
-    </ul>
-    <!-- 评论插件 -->
-    <!-- 来必力City版安装代码 -->
-
-<!-- City版安装代码已完成 -->
     
-    
-    <!-- partial('_partial/comment/changyan') -->
-    <!--PC版-->
-
-
-    
-    
-
-    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -556,24 +472,6 @@ height:50vh;
 </footer>
     </div>
     <!-- toc -->
-    
-    <div class="toc-wrapper" style=
-    
-
-
-
-
-
-
-
-top:50vh;
-
-    >
-        <div class="toc-catalog">
-            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
-        </div>
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#小知识"><span class="toc-number">1.</span> <span class="toc-text">小知识</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组成部分"><span class="toc-number">2.</span> <span class="toc-text">组成部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置"><span class="toc-number">3.</span> <span class="toc-text">配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置文件说明"><span class="toc-number">4.</span> <span class="toc-text">配置文件说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#常用命令"><span class="toc-number">5.</span> <span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参考文档："><span class="toc-number">6.</span> <span class="toc-text">参考文档：</span></a></li></ol>
-    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -864,8 +762,6 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
-    
-        <script src="/scripts/share.js" async></script>    
      
     </body>
 </html>
