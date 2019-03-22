@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[计算机网络]]></title>
+    <url>%2F2019%2F03%2F22%2F%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%2F</url>
+    <content type="text"><![CDATA[小知识 守时安命，顺时听天。 计算机体系结构5层参考模型]]></content>
+      <categories>
+        <category>考试</category>
+        <category>安全</category>
+      </categories>
+      <tags>
+        <tag>CISSP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[CISSP备考笔记]]></title>
+    <url>%2F2019%2F03%2F20%2FCISSP%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[小知识]]></content>
+      <categories>
+        <category>考试</category>
+        <category>安全</category>
+      </categories>
+      <tags>
+        <tag>CISSP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[MongoDB个人笔记]]></title>
     <url>%2F2019%2F03%2F13%2FMongoDB%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[小知识 MongoDB 是一个基于分布式文件存储的数据库。由 C++ 语言编写。旨在为 WEB 应用提供可扩展的高性能数据存储解决方案。MongoDB 是一个介于关系数据库和非关系数据库之间的产品，是非关系数据库当中功能最丰富，最像关系数据库的。 安装 略 配置1、首先我们创建一个数据库存储目录 /data/db： 1sudo mkdir -p /data/db 启动 mongodb，默认数据库目录即为 /data/db： 12345sudo mongod# 如果没有创建全局路径 PATH，需要进入以下目录cd /usr/local/mongodb/binsudo ./mongod 再打开一个终端进入执行以下命令： 12345678910$ cd /usr/local/mongodb/bin $ ./mongoMongoDB shell version v3.4.2connecting to: mongodb://127.0.0.1:27017MongoDB server version: 3.4.2Welcome to the MongoDB shell.……&gt; 1 + 12&gt; 注意：如果你的数据库目录不是/data/db，可以通过 –dbpath 来指定。 连接使用用户名和密码连接到 MongoDB 服务器，你必须使用 ‘username:password@hostname/dbname‘ 格式，’username’为用户名，’password’ 为密码。 使用用户名和密码连接登陆到默认数据库： 123$ ./mongoMongoDB shell version: 3.0.6connecting to: test 创建用户密码 123456789101112131415#启动mongod#创建用户mongouse admindb.createUser(&#123;user:&apos;root&apos;,pwd:&apos;toor#isc&apos;,roles:[&#123; &quot;role&quot; : &quot;root&quot;, &quot;db&quot; : &quot;admin&quot;&#125;]&#125;);exit#关闭数据库mongod --shutdown --dbpath /data/db#用验证模式启动数据库mongod --auth#创建auth_db数据库(使用auth_db数据库, 没有会自动创建)use auth_dbdb.createUser(&#123;user:&quot;isc&quot;,pwd:&quot;isc#168&quot;,roles:[&#123;role:&quot;dbOwner&quot;,db:&quot;auth_db&quot;&#125;]&#125;)exit 使用用户 admin 使用密码 123456 连接到本地的 MongoDB 服务上。输出结果如下所示： 12&gt; mongodb://admin:123456@localhost/... 使用用户名和密码连接登陆到指定数据库，格式如下： 1mongodb://admin:123456@localhost/test 命令行认证 1234mongoshow dbsuse auth_dbdb.auth(&apos;isc&apos;,&apos;isc#168&apos;) 常规操作 查看当前数据库：db 查看所有数据库：show dbs 查看用户：db.getUsers() 删除用户：db.dropUser(‘xxx’) 创建（使用）数据库：use xxx 删除数据库：db.dropDatabase() 创建表：db.createCollection(“xxx”) 带有参数创建表 ：db.createCollection(name, options) 查看所有表：show collections 删除表：db.xxx.drop() 插入数据： db.xxx.insert(document) db.xxx.save(document) 查询数据：db.xxx.find() 参考：菜鸟教程 to be continue …]]></content>
@@ -14,7 +38,7 @@
   <entry>
     <title><![CDATA[更好的别人]]></title>
     <url>%2F2019%2F03%2F12%2F%E6%9B%B4%E5%A5%BD%E7%9A%84%E5%88%AB%E4%BA%BA%2F</url>
-    <content type="text"><![CDATA[引言别人都在等待更好的别人，而我在等着更好的你。 循环转眼已经毕业数年，感觉陷入日复一日の循环中而丧失了某些头脑中机能。有时候会想，是否我们的生活本该是这个样子，是否到我们这个年纪本该就是这个样子？生活什么时候变成了什么都想要，什么都差点够到的样子 —— 感觉就像被胡萝卜牵着走的驴，不知道自己的目的地是何方。 存在或许，有些事情总是我想做的吧？不是可劲玩喜欢的游戏，不是更好的车、更大的房子，甚至赚更多的钱 。也许是慢慢察觉到要慢慢变成一个无聊的中年人，我开始想到王小波的“在我看来，春天里一棵小草生长，它没有什么目的。风起时一匹公马发情，它也没有什么目的。草长马发情，绝非表演给什么人看的，这就是存在本身”。那么，我们存在的本身是什么呢？ 回忆记得《简单法则》里有句话，大概意思是等到年老时，除了回忆我们一无所需，除了回忆我们一无所有。王小波说“以后我要真诚地做一切事情，我要像笛卡尔一样思辨，像堂吉诃德一样攻击风车。无论写诗还是做爱，都要以极大的真诚完成。眼前就是罗得岛，我就在这里跳跃——我这么做什么都不为，这就是存在本身。” 也许只要真诚地去做一切事情，便很好了吧~]]></content>
+    <content type="text"><![CDATA[引言 别人都在等待更好的别人，而我在等着更好的你。 循环转眼已经毕业数年，感觉陷入日复一日の循环中而丧失了某些头脑中机能。有时候会想，是否我们的生活本该是这个样子，是否到我们这个年纪本该就是这个样子？生活什么时候变成了什么都想要，什么都差点够到的样子 —— 感觉就像被胡萝卜牵着走的驴，不知道自己的目的地是何方。 存在或许，有些事情总是我想做的吧？不是可劲玩喜欢的游戏，不是更好的车、更大的房子，甚至赚更多的钱 。也许是慢慢察觉到要慢慢变成一个无聊的中年人，我开始想到王小波的“在我看来，春天里一棵小草生长，它没有什么目的。风起时一匹公马发情，它也没有什么目的。草长马发情，绝非表演给什么人看的，这就是存在本身”。那么，我们存在的本身是什么呢？ 回忆记得《简单法则》里有句话，大概意思是等到年老时，除了回忆我们一无所需，除了回忆我们一无所有。王小波说“以后我要真诚地做一切事情，我要像笛卡尔一样思辨，像堂吉诃德一样攻击风车。无论写诗还是做爱，都要以极大的真诚完成。眼前就是罗得岛，我就在这里跳跃——我这么做什么都不为，这就是存在本身。” 也许只要真诚地去做一切事情，便很好了吧~]]></content>
       <categories>
         <category>随笔</category>
       </categories>

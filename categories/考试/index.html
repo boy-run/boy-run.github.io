@@ -78,6 +78,8 @@
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -201,10 +203,8 @@
 </head>
 
     
-        <body class="home-body">
     
-    
-<header class="header index-header">
+<header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -220,34 +220,21 @@
 
 
 
-
-height:50vh;
 ">
     
     <!-- 主页  -->
-    
-    
-    <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(https://source.unsplash.com/random)"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            风介穹宇
-            <!-- 文章页  -->
-            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
-            
-            
-                风起四方，介于穹宇。
-            
-            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
@@ -359,25 +346,28 @@ height:50vh;
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/02/25/浅析Supervisor/">
+        <a class="abstract-title" href="/2019/03/22/计算机网络/">
             
-                <span>浅析Supervisor</span>
+                <span>计算机网络</span>
         </a>
         <div class="abstract-content">
-            <h4 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h4><blockquote>
-<p><a href="http://supervisord.org/" target="_blank" rel="noopener">Supervisor</a>是用Python开发的一个client/server服务，是Linux/Unix系统下的一个进程管理工具，不支持Windows系统。它可以很方便的监听、启动、停止、重启一个或多个进程。用Supervisor管理的进程，当一个进程意外被杀死，supervisort监听到进程死后，会自动将它重新拉起，很方便的做到进程自动恢复的功能，不再需要自己写shell脚本来控制。</p>
-</blockquote>
+            小知识
+
+守时安命，顺时听天。
+
+计算机体系结构5层参考模型
+
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/02/25</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/22</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="开发">开发</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="CISSP">CISSP</a>
     
 </div>
             
@@ -390,71 +380,23 @@ height:50vh;
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2019/01/25/BugkuCTF-WEB-WriteUp/">
+        <a class="abstract-title" href="/2019/03/20/CISSP备考笔记/">
             
-                <span>BugkuCTF-WEB-WriteUp</span>
+                <span>CISSP备考笔记</span>
         </a>
         <div class="abstract-content">
-            <h4 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h4><blockquote>
-<p>CTF竞赛是安全圈喜闻乐见的竞赛模式，对于培养网络安全技术人才起到了很重要的作用。</p>
-<p>一般线上初选采用传统的夺旗赛模式，也就是在题目中设置一些标识，解题的目的就是为了找到标识并提交。通常包含的题目类型包括MISC、CRYPTO、PWN、REVERSE、WEB等。</p>
-<ul>
-<li>MISC(Miscellaneous)类型，即安全杂项，题目或涉及流量分析、电子取证、人肉搜索、数据分析等等。</li>
-<li>CRYPTO(Cryptography)类型，即密码学，题目考察各种加解密技术，包括古典加密技术、现代加密技术甚至出题者自创加密技术。</li>
-<li>PWN类型，PWN在黑客俚语中代表着攻破、取得权限，多为溢出类题目。</li>
-<li>REVERSE类型，即逆向工程，题目涉及到软件逆向、破解技术。</li>
-<li>WEB类型，即题目会涉及到常见的Web漏洞，诸如注入、XSS、文件包含、代码执行等漏洞。</li>
-</ul>
-</blockquote>
+            <p>小知识</p>
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/25</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/03/20</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="安全">安全</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/01/23/SQLMap个人笔记/">
-            
-                <span>SQLMap个人笔记</span>
-        </a>
-        <div class="abstract-content">
-            <h5 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h5><blockquote>
-<ol>
-<li>基于布尔的盲注，即可以根据返回页面判断条件真假的注入。 </li>
-<li>基于时间的盲注，即不能根据页面返回内容判断，用条件语句查看时间延迟语句是否执行判断。 </li>
-<li>基于报错注入，即页面会返回错误信息，或者把注入的语句的结果直接返回在页面中。 </li>
-<li>联合查询注入，可以使用union的情况下的注入。 </li>
-<li>堆查询注入，可以同时执行多条语句的执行时的注入。 </li>
-</ol>
-</blockquote>
-<p>P.S. 主要为sqlmap -hh内容，仅为记录，不喜勿喷！🎁</p>
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/01/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="安全">安全</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="CISSP">CISSP</a>
     
 </div>
             
@@ -463,108 +405,8 @@ height:50vh;
     
     <!-- paginator  -->
     
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/page/2/">&#60; PREV</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">NEXT &#62;</a>
-    </nav>
-    
 </main>
             <!-- profile -->
-            
-            <div class="profile">
-    <img class="profile-avatar" alt="avatar" src="/avatar/Niko.jpg">
-    <div class="profile-name">风介zZ</div>
-    
-    <div class="profile-signature">
-        遇见更好的自己。
-    </div>
-    
-    
-    <div class="profile-social">
-        
-    
-        
-            
-                <a href="mailto:boy-run@qq.com" class="iconfont-archer email" title="email"></a>
-            
-        
-    
-        
-            
-                <a href="//github.com/boy-run" class="iconfont-archer github" target="_blank" title="github"></a>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer wechat" title="wechat">
-                  
-                  <img class="profile-qr" src="/assets/WeChat.png">
-                </span>
-            
-        
-    
-        
-            
-                <span class="iconfont-archer qq" title="qq">
-                  
-                  <img class="profile-qr" src="https://ws4.sinaimg.cn/large/006tNc79gy1fzhrxkgh1kj30c80c6jz1.jpg">
-                </span>
-            
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-    </div>
-    
-    
-        <div class="friends">
-            <div>FRIENDS</div>
-            
-                
-                    <span>
-                        <a href="//bbs.fishc.com" target="_black">鱼C</a>
-                    </span>
-                
-            
-        </div>
-    
-    
-        <div class="about-me">
-            <a href="/about">ABOUT ME</a>
-        </div>
-    
-</div>
             
         </div>
         <footer class="footer footer-unloaded">
