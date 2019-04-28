@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[CISSP备考笔记]]></title>
+    <url>%2F2019%2F04%2F28%2FCISSP%E5%A4%87%E8%80%83%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[繁星点点安全工程 安全运营]]></content>
+      <categories>
+        <category>考试</category>
+      </categories>
+      <tags>
+        <tag>CISSP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Web安全测试checklist]]></title>
     <url>%2F2019%2F03%2F25%2FWeb%E5%AE%89%E5%85%A8%E6%B5%8B%E8%AF%95checklist%2F</url>
     <content type="text"><![CDATA[前言 记录安全测试的点滴细节，流程化整个过程。 流程信息收集收集各种权限角色测试账号，记录登录界面的功能差别。—— 测试越权 输入输出点搜索、查找、排序功能 —— 测试注入 新增、删除、修改功能 —— 测试越权 合规类型 登录 错误模糊提示 —— 账号/密码错误。 登录锁定 —— 5次错误锁定账户。 图形验证码 —— 每次刷新，复杂度足够。]]></content>
